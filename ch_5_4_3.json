@@ -1,0 +1,805 @@
+{
+  "title": "مراجعة شاملة DSP",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "question": "The primary domain into which the Z-transform maps a discrete-time signal is the:",
+      "options": [
+        "A) Time domain.",
+        "B) Frequency domain.",
+        "C) Complex frequency domain (z-plane).",
+        "D) Spatial domain."
+      ],
+      "correctAnswer": "C) Complex frequency domain (z-plane).",
+      "explanation": "حسب الصفحة الثانية من المحاضرة الثالثة، تحويل Z ينقل الإشارة من النطاق الزمني المتقطع إلى نطاق التردد المركب، والذي يُعرف بالمستوى Z (z-plane)."
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "question": "The ROC of the Z-transform is crucial for all the following reasons EXCEPT:",
+      "options": [
+        "A) It determines if the Z-transform exists.",
+        "B) It determines the uniqueness of the inverse Z-transform.",
+        "C) It determines the energy of the signal.",
+        "D) It helps determine system stability and causality."
+      ],
+      "correctAnswer": "C) It determines the energy of the signal.",
+      "explanation": "حسب الصفحة العاشرة والحادية عشرة من المحاضرة الثالثة، منطقة التقارب (ROC) ضرورية لوجود تحويل Z وتفرده، وتُستخدم لتحليل استقرار وسببية النظام. لا تُستخدم ROC مباشرة لتحديد طاقة الإشارة."
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "question": "For a discrete-time system to be Stable, its Region of Convergence (ROC) must:",
+      "options": [
+        "A) Be inside the unit circle.",
+        "B) Be outside the unit circle.",
+        "C) Include the unit circle.",
+        "D) Not include any poles."
+      ],
+      "correctAnswer": "C) Include the unit circle.",
+      "explanation": "حسب الصفحة العاشرة والحادية عشرة من المحاضرة الثالثة، شرط استقرار النظام هو أن منطقة التقارب (ROC) الخاصة به تشمل دائرة الوحدة |z|=1."
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "question": "A digital filter is essentially a:",
+      "options": [
+        "A) Mechanical device.",
+        "B) Electrical circuit.",
+        "C) Mathematical algorithm processing digital signals.",
+        "D) Biological process affecting signal propagation."
+      ],
+      "correctAnswer": "C) Mathematical algorithm processing digital signals.",
+      "explanation": "حسب الصفحة الثانية من المحاضرة الخامسة، المرشح الرقمي هو خوارزمية رياضية تُنفذ لمعالجة إشارات رقمية."
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "question": "Which of the following is an advantage of digital filters over analog filters?",
+      "options": [
+        "A) Higher speed for very high frequencies.",
+        "B) Simpler design for arbitrary frequency responses without CAD.",
+        "C) Guaranteed absolute stability for all types.",
+        "D) Performance is less sensitive to environmental variations like temperature."
+      ],
+      "correctAnswer": "D) Performance is less sensitive to environmental variations like temperature.",
+      "explanation": "حسب الصفحة الثانية من المحاضرة الخامسة، من مميزات المرشحات الرقمية أن أداءها أقل تأثراً بالتغيرات البيئية مثل درجة الحرارة مقارنة بالمرشحات التناظرية."
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "question": "The Discrete Fourier Transform (DFT) is most suitable for analyzing signals that are:",
+      "options": [
+        "A) Continuous-time and infinite length.",
+        "B) Discrete-time and infinite length.",
+        "C) Continuous-time and finite length.",
+        "D) Discrete-time and finite length."
+      ],
+      "correctAnswer": "D) Discrete-time and finite length.",
+      "explanation": "حسب الصفحة الثانية والثالثة من المحاضرة الرابعة، DFT مُصمم خصيصاً للإشارات التي تكون متقطعة في الزمن وذات طول محدود، وهو النوع الذي نتعامل معه في الأنظمة الرقمية."
+    },
+    {
+      "id": "q7",
+      "type": "mcq",
+      "question": "The computational efficiency of the Fast Fourier Transform (FFT) compared to direct DFT computation for large N is its primary advantage due to complexity reduction from O(N^2) to:",
+      "options": [
+        "A) O(N).",
+        "B) O(log N).",
+        "C) O(N log N).",
+        "D) O(N^3)."
+      ],
+      "correctAnswer": "C) O(N log N).",
+      "explanation": "حسب الصفحة الرابعة من المحاضرة الرابعة، الفائدة الأساسية لـ FFT هي تقليل التعقيد الحسابي من O(N^2) في DFT المباشر إلى O(N log N)، مما يجعلها أسرع بكثير للإشارات الكبيرة."
+    },
+    {
+      "id": "q8",
+      "type": "mcq",
+      "question": "A causal discrete-time system has its ROC located:",
+      "options": [
+        "A) Inside the innermost pole.",
+        "B) As an annulus.",
+        "C) Outside the outermost pole and extends to infinity.",
+        "D) Limited to the unit circle."
+      ],
+      "correctAnswer": "C) Outside the outermost pole and extends to infinity.",
+      "explanation": "حسب الصفحة العاشرة والثانية عشرة من المحاضرة الثالثة، النظام السببي له ROC تبدأ من خارج أبعد قطب وتمتد إلى ما لا نهاية."
+    },
+    {
+      "id": "q9",
+      "type": "mcq",
+      "question": "The transfer function of an IIR filter in the Z-domain is generally a:",
+      "options": [
+        "A) Polynomial in z^-1.",
+        "B) Rational function (ratio of polynomials in z^-1).",
+        "C) Simple exponential function.",
+        "D) Constant value."
+      ],
+      "correctAnswer": "B) Rational function (ratio of polynomials in z^-1).",
+      "explanation": "حسب الصفحة الرابعة من المحاضرة الخامسة، دالة التحويل لمرشح IIR تكون على شكل دالة كسرية في z^-1، أي نسبة بين كثيرتي حدود."
+    },
+    {
+      "id": "q10",
+      "type": "mcq",
+      "question": "Which property of the Z-transform allows us to find the transform of a sum of signals by summing their individual transforms?",
+      "options": [
+        "A) Time Shifting.",
+        "B) Convolution.",
+        "C) Linearity.",
+        "D) ROC property."
+      ],
+      "correctAnswer": "C) Linearity.",
+      "explanation": "خاصية الخطية (Linearity) لتحويل Z تنص على أن تحويل مجموع خطي لإشارات هو مجموع خطي لتحويلاتها. هذه الخاصية موجودة في المحاضرة الثالثة (واستخدمت في التمارين)."
+    },
+    {
+      "id": "q11",
+      "type": "mcq",
+      "question": "The Inverse DFT (IDFT) is used for:",
+      "options": [
+        "A) Calculating the ROC of the DFT.",
+        "B) Transforming a signal from the time domain to the frequency domain.",
+        "C) Reconstructing the time-domain signal from its DFT.",
+        "D) Determining the phase response of a filter."
+      ],
+      "correctAnswer": "C) Reconstructing the time-domain signal from its DFT.",
+      "explanation": "حسب الصفحة الثالثة من المحاضرة الرابعة، IDFT هي العملية العكسية لـ DFT وتُستخدم لإعادة بناء الإشارة الأصلية في النطاق الزمني من تمثيلها في نطاق التردد."
+    },
+    {
+      "id": "q12",
+      "type": "mcq",
+      "question": "A key difference in the structure of an IIR filter compared to a direct form FIR filter is the presence of:",
+      "options": [
+        "A) Input signal.",
+        "B) Output signal.",
+        "C) Delay elements.",
+        "D) Feedback paths."
+      ],
+      "correctAnswer": "D) Feedback paths.",
+      "explanation": "حسب الصفحة الثالثة والخامسة والسادسة من المحاضرة الخامسة، مرشحات IIR تكون تكرارية (recursive) وتتضمن تغذية راجعة (feedback) حيث يعتمد الخرج الحالي على قيم الخرج السابقة، وهذا يُميزها هيكلياً عن مرشحات FIR المباشرة غير التكرارية."
+    },
+    {
+      "id": "q13",
+      "type": "mcq",
+      "question": "If a filter's primary requirement is exactly linear phase response, which type is generally preferred?",
+      "options": [
+        "A) IIR filter.",
+        "B) FIR filter.",
+        "C) Both can achieve exactly linear phase.",
+        "D) Neither can achieve linear phase."
+      ],
+      "correctAnswer": "B) FIR filter.",
+      "explanation": "حسب الصفحة الرابعة من المحاضرة الخامسة، مرشحات FIR يمكن أن تمتلك استجابة طور خطية تماماً، وهو أمر صعب أو مستحيل تحقيقه بدقة في مرشحات IIR."
+    },
+    {
+      "id": "q14",
+      "type": "mcq",
+      "question": "The parameter As (stopband attenuation) in a filter's frequency specification typically represents:",
+      "options": [
+        "A) The maximum allowed ripple in the passband.",
+        "B) The minimum required attenuation in the stopband.",
+        "C) The width of the transition band.",
+        "D) The frequency at the edge of the stopband."
+      ],
+      "correctAnswer": "B) The minimum required attenuation in the stopband.",
+      "explanation": "حسب الصفحة السابعة من المحاضرة الخامسة، As هو توهين نطاق الإيقاف، ويشير إلى مدى إضعاف المرشح للترددات في نطاق الإيقاف. كلما زادت قيمته، زاد الإضعاف. وبالتالي، فهو يمثل الحد الأدنى المطلوب من الإضعاف (أو الحد الأقصى المسموح به للسعة في نطاق الإيقاف معبراً عنه بالتوهين)."
+    },
+    {
+      "id": "q15",
+      "type": "mcq",
+      "question": "The Z-transform of the unit impulse function δ[n] is:",
+      "options": [
+        "A) 0.",
+        "B) 1.",
+        "C) z.",
+        "D) z^-1."
+      ],
+      "correctAnswer": "B) 1.",
+      "explanation": "حسب الصفحة الثامنة والتاسعة من المحاضرة الثالثة، تحويل Z لدالة النبضة عند الصفر هو 1."
+    },
+    {
+      "id": "q16",
+      "type": "mcq",
+      "question": "In the DFT formula X[k]=∑ n=0 N-1 x[n]⋅e-j(2π/N)kn, the term e-j(2π/N)kn is a function of:",
+      "options": [
+        "A) Time index n only.",
+        "B) Frequency index k only.",
+        "C) Both time index n and frequency index k.",
+        "D) The length of the signal N only."
+      ],
+      "correctAnswer": "C) Both time index n and frequency index k.",
+      "explanation": "حسب الصفحة الثالثة من المحاضرة الرابعة، الحد الأسي المركب يعتمد على كل من مؤشر الزمن n ومؤشر التردد k."
+    },
+    {
+      "id": "q17",
+      "type": "mcq",
+      "question": "One of the applications of FFT mentioned in the document is:",
+      "options": [
+        "A) Designing analog filters.",
+        "B) Solving continuous-time differential equations.",
+        "C) Analyzing EEG signals for frequency bands.",
+        "D) Converting continuous-time signals to discrete-time."
+      ],
+      "correctAnswer": "C) Analyzing EEG signals for frequency bands.",
+      "explanation": "حسب الصفحة السادسة من المحاضرة الرابعة، يُستخدم FFT في تحليل الإشارات البيولوجية مثل EEG لاستخلاص نطاقات ترددية معينة."
+    },
+    {
+      "id": "q18",
+      "type": "mcq",
+      "question": "The computational complexity of calculating DFT directly grows quadratically with signal length N. This means its complexity is O(...).",
+      "options": [
+        "A) N.",
+        "B) log N.",
+        "C) N log N.",
+        "D) N^2."
+      ],
+      "correctAnswer": "D) N^2.",
+      "explanation": "حسب الصفحة الرابعة من المحاضرة الرابعة، التعقيد الحسابي لـ DFT المباشر هو O(N^2)."
+    },
+    {
+      "id": "q19",
+      "type": "mcq",
+      "question": "For a finite-length signal, its Z-transform ROC is typically:",
+      "options": [
+        "A) An annulus.",
+        "B) Inside a circle.",
+        "C) Outside a circle.",
+        "D) The entire z-plane except possibly z=0 or z=∞."
+      ],
+      "correctAnswer": "D) The entire z-plane except possibly z=0 or z=∞.",
+      "explanation": "حسب الصفحة الثامنة والتاسعة من المحاضرة الثالثة، ROC للإشارات ذات الطول المحدود هي كامل المستوى Z باستثناء النقطتين التي تجعل التعبير غير معرف (0 و ∞)."
+    },
+    {
+      "id": "q20",
+      "type": "mcq",
+      "question": "A recursive difference equation is characteristic of:",
+      "options": [
+        "A) FIR filters.",
+        "B) IIR filters.",
+        "C) Both FIR and IIR filters.",
+        "D) Analog filters."
+      ],
+      "correctAnswer": "B) IIR filters.",
+      "explanation": "حسب الصفحة الثالثة والسادسة من المحاضرة الخامسة، المعادلات الفرقية التكرارية، التي تتضمن قيم الخرج السابقة، هي سمة مميزة لمرشحات IIR."
+    },
+    {
+      "id": "q21",
+      "type": "mcq",
+      "question": "According to the document, the design and development times for digital filters, especially hardware, can be:",
+      "options": [
+        "A) Much shorter than for analog filters.",
+        "B) Much longer than for analog filters.",
+        "C) The same as for analog filters.",
+        "D) Not mentioned in the document."
+      ],
+      "correctAnswer": "B) Much longer than for analog filters.",
+      "explanation": "حسب الصفحة الثانية من المحاضرة الخامسة، أحد عيوب المرشحات الرقمية هو أن أوقات تصميمها وتطويرها، خاصة الأجهزة، يمكن أن تكون أطول بكثير من المرشحات التناظرية."
+    },
+    {
+      "id": "q22",
+      "type": "mcq",
+      "question": "The relationship y(n) = ∑ k=0 ∞ h(k)x(n-k) represents:",
+      "options": [
+        "A) The Z-transform definition.",
+        "B) The convolution sum.",
+        "C) The DFT formula.",
+        "D) The IDFT formula."
+      ],
+      "correctAnswer": "B) The convolution sum.",
+      "explanation": "حسب الصفحة الثالثة من المحاضرة الخامسة، هذه هي صيغة الالتفاف التي تربط دخل النظام x(n) بخرجه y(n) عبر استجابته النبضية h(k)."
+    },
+    {
+      "id": "q23",
+      "type": "mcq",
+      "question": "For a stable causal system, all poles of its Z-transform must lie:",
+      "options": [
+        "A) On the unit circle.",
+        "B) Outside the unit circle.",
+        "C) Inside the unit circle.",
+        "D) On the real axis."
+      ],
+      "correctAnswer": "C) Inside the unit circle.",
+      "explanation": "حسب الصفحة العاشرة والحادية عشرة من المحاضرة الثالثة، النظام السببي له ROC خارج أبعد قطب. لكي يكون مستقراً (ROC تشمل دائرة الوحدة)، يجب أن يكون أبعد قطب داخل دائرة الوحدة، مما يعني أن جميع الأقطاب يجب أن تكون داخل دائرة الوحدة."
+    },
+    {
+      "id": "q24",
+      "type": "mcq",
+      "question": "The Frequency Shifting property of the DFT involves:",
+      "options": [
+        "A) Shifting the time-domain signal.",
+        "B) Multiplying the time-domain signal by a complex exponential.",
+        "C) Taking the inverse DFT.",
+        "D) Changing the sampling rate."
+      ],
+      "correctAnswer": "B) Multiplying the time-domain signal by a complex exponential.",
+      "explanation": "حسب الصفحة الثالثة من المحاضرة الرابعة، خاصية الإزاحة الترددية في DFT تحدث عندما يتم ضرب الإشارة في النطاق الزمني بأس مركب جيبي."
+    },
+    {
+      "id": "q25",
+      "type": "mcq",
+      "question": "The parameter fp in a low-pass filter frequency specification represents the:",
+      "options": [
+        "A) Stopband edge frequency.",
+        "B) Passband edge frequency.",
+        "C) Sampling frequency.",
+        "D) Nyquist frequency."
+      ],
+      "correctAnswer": "B) Passband edge frequency.",
+      "explanation": "حسب الصفحة السابعة من المحاضرة الخامسة (شرح مخطط التسامح)، fp هو تردد حافة نطاق التمرير (passband edge frequency)."
+    },
+    {
+      "id": "q26",
+      "type": "mcq",
+      "question": "One of the practical applications of DFT/FFT is in:",
+      "options": [
+        "A) Mechanical engineering design.",
+        "B) Financial market prediction.",
+        "C) Speech Recognition.",
+        "D) Chemical reaction analysis."
+      ],
+      "correctAnswer": "C) Speech Recognition.",
+      "explanation": "حسب الصفحة الخامسة من المحاضرة الرابعة، التعرف على الكلام وتحليله هو أحد التطبيقات العملية المذكورة لـ DFT/FFT."
+    },
+    {
+      "id": "q27",
+      "type": "mcq",
+      "question": "The ROC for a left-sided sequence a^n u[-n-1] is generally of the form:",
+      "options": [
+        "A) |z| > R.",
+        "B) |z| < R.",
+        "C) R1 < |z| < R2.",
+        "D) Entire z-plane."
+      ],
+      "correctAnswer": "B) |z| < R.",
+      "explanation": "حسب الصفحة الحادية عشرة من المحاضرة الثالثة، ROC للمتتابعات يسرى الجانب تكون داخل دائرة نصف قطرها |a|."
+    },
+    {
+      "id": "q28",
+      "type": "mcq",
+      "question": "A system whose impulse response h[n] is absolutely summable (∑ n=-∞ ∞ |h[n]| < ∞) is considered:",
+      "options": [
+        "A) Causal.",
+        "B) Anti-causal.",
+        "C) Stable.",
+        "D) Unstable."
+      ],
+      "correctAnswer": "C) Stable.",
+      "explanation": "حسب الصفحة الحادية عشرة من المحاضرة الثالثة، قابلية التجميع المطلق لاستجابة النبضة هي تعريف الاستقرار للنظام."
+    },
+    {
+      "id": "q29",
+      "type": "mcq",
+      "question": "The primary purpose of Fourier analysis in DSP is to view signals in the:",
+      "options": [
+        "A) Time domain.",
+        "B) Frequency domain.",
+        "C) Amplitude domain.",
+        "D) Phase domain."
+      ],
+      "correctAnswer": "B) Frequency domain.",
+      "explanation": "حسب الصفحة الثانية من المحاضرة الرابعة، تحليل فورييه يُستخدم لتحليل الإشارات في نطاق التردد."
+    },
+    {
+      "id": "q30",
+      "type": "mcq",
+      "question": "The Discrete-Time Fourier Transform (DTFT) produces a:",
+      "options": [
+        "A) Discrete frequency output.",
+        "B) Continuous frequency output.",
+        "C) Discrete time output.",
+        "D) Continuous time output."
+      ],
+      "correctAnswer": "B) Continuous frequency output.",
+      "explanation": "حسب الصفحة الثانية من المحاضرة الرابعة، DTFT هو للإشارات المتقطعة زمنياً ويعطي تمثيلاً في نطاق التردد المستمر."
+    },
+    {
+      "id": "q31",
+      "type": "mcq",
+      "question": "One of the disadvantages of digital filters mentioned is:",
+      "options": [
+        "A) They are not programmable.",
+        "B) Performance varies significantly with temperature.",
+        "C) Long design and development times, especially for hardware.",
+        "D) Cannot be used at very low frequencies."
+      ],
+      "correctAnswer": "C) Long design and development times, especially for hardware.",
+      "explanation": "حسب الصفحة الثانية من المحاضرة الخامسة، من عيوب المرشحات الرقمية أوقات تصميم وتطوير طويلة، خاصة عند بناء الأجهزة."
+    },
+    {
+      "id": "q32",
+      "type": "mcq",
+      "question": "The transfer function of an FIR filter is directly related to its:",
+      "options": [
+        "A) Poles and zeros.",
+        "B) Impulse response.",
+        "C) Recursive coefficients.",
+        "D) Passband ripple."
+      ],
+      "correctAnswer": "B) Impulse response.",
+      "explanation": "حسب الصفحة الرابعة من المحاضرة الخامسة، دالة التحويل لمرشح FIR هي مجموع محدود لمعاملات الاستجابة النبضية مضروبة في قوى z^-1."
+    },
+    {
+      "id": "q33",
+      "type": "mcq",
+      "question": "If the ROC of a Z-transform is the entire z-plane except for the origin (z=0) and infinity (z=∞), the corresponding signal is most likely:",
+      "options": [
+        "A) Right-sided.",
+        "B) Left-sided.",
+        "C) Two-sided.",
+        "D) Finite-length."
+      ],
+      "correctAnswer": "D) Finite-length.",
+      "explanation": "حسب الصفحة الثامنة والتاسعة من المحاضرة الثالثة، ROC للإشارات ذات الطول المحدود هي كل المستوى Z باستثناء 0 و ∞."
+    },
+    {
+      "id": "q34",
+      "type": "mcq",
+      "question": "The property X[k+N] = X[k] for DFT relates to:",
+      "options": [
+        "A) Time shifting.",
+        "B) Frequency shifting.",
+        "C) Periodicity.",
+        "D) Linearity."
+      ],
+      "correctAnswer": "C) Periodicity.",
+      "explanation": "حسب الصفحة الثالثة من المحاضرة الرابعة، هذه هي خاصية الدورية (Periodicity) لـ DFT في نطاق التردد."
+    },
+    {
+      "id": "q35",
+      "type": "mcq",
+      "question": "The computational complexity of the FFT algorithm for length N is significantly lower than direct DFT, making it practical for:",
+      "options": [
+        "A) Very short signals.",
+        "B) Large signals.",
+        "C) Continuous-time signals.",
+        "D) Analog signals."
+      ],
+      "correctAnswer": "B) Large signals.",
+      "explanation": "حسب الصفحة الرابعة من المحاضرة الرابعة، FFT مهم بشكل خاص لأنه يقلل وقت الحساب بشكل كبير للإشارات الكبيرة."
+    },
+    {
+      "id": "q36",
+      "type": "mcq",
+      "question": "In the frequency specification of a filter, the region between the passband and the stopband is called the:",
+      "options": [
+        "A) Passband ripple.",
+        "B) Stopband attenuation.",
+        "C) Transition band.",
+        "D) Linear phase region."
+      ],
+      "correctAnswer": "C) Transition band.",
+      "explanation": "حسب الصفحة السابعة من المحاضرة الخامسة، المنطقة بين نطاق التمرير ونطاق الإيقاف تُعرف بنطاق الانتقال (Transition band)."
+    },
+    {
+      "id": "q37",
+      "type": "mcq",
+      "question": "If a filter is realized non-recursively, it is always:",
+      "options": [
+        "A) IIR.",
+        "B) FIR.",
+        "C) Unstable.",
+        "D) Recursive."
+      ],
+      "correctAnswer": "B) FIR.",
+      "explanation": "حسب الصفحة الرابعة من المحاضرة الخامسة، مرشحات FIR التي تُنفذ بشكل غير تكراري تكون دائماً مستقرة. هيكلية FIR المباشرة هي هيكلية غير تكرارية."
+    },
+    {
+      "id": "q38",
+      "type": "mcq",
+      "question": "The definition of the Z-transform for a general signal x[n] involves a summation from:",
+      "options": [
+        "A) 0 to N-1.",
+        "B) 0 to ∞.",
+        "C) -∞ to ∞.",
+        "D) -∞ to 0."
+      ],
+      "correctAnswer": "C) -∞ to ∞.",
+      "explanation": "حسب الصفحة الثانية والعاشرة من المحاضرة الثالثة، التعريف العام لتحويل Z يشمل مجموعاً يمتد لجميع قيم الزمن n من -∞ إلى ∞."
+    },
+    {
+      "id": "q39",
+      "type": "mcq",
+      "question": "OFDM technology in wireless communication relies heavily on which pair of transforms?",
+      "options": [
+        "A) Z-Transform and Inverse Z-Transform.",
+        "B) Fourier Transform and Inverse Fourier Transform.",
+        "C) DFT and IFFT.",
+        "D) Laplace Transform and Inverse Laplace Transform."
+      ],
+      "correctAnswer": "C) DFT and IFFT.",
+      "explanation": "حسب الصفحة السادسة من المحاضرة الرابعة، OFDM يعتمد بشكل أساسي على تحويلي DFT و IFFT."
+    },
+    {
+      "id": "q40",
+      "type": "mcq",
+      "question": "The final step in the typical digital filter design process is:",
+      "options": [
+        "A) Specification of requirements.",
+        "B) Calculation of coefficients.",
+        "C) Representation by a suitable structure.",
+        "D) Implementation in software/hardware."
+      ],
+      "correctAnswer": "D) Implementation in software/hardware.",
+      "explanation": "حسب الصفحة السادسة من المحاضرة الخامسة، الخطوة الأخيرة في عملية تصميم المرشح هي التنفيذ في البرمجيات و/أو الأجهزة."
+    },
+    {
+      "id": "tf41",
+      "type": "tf",
+      "question": "The Laplace transform is primarily used for analyzing discrete-time systems.",
+      "correctAnswer": false,
+      "explanation": "حسب الصفحة الثانية من المحاضرة الثالثة، تحويل لابلاس يُستخدم بشكل أساسي لتحليل الأنظمة ذات الوقت المستمر."
+    },
+    {
+      "id": "tf42",
+      "type": "tf",
+      "question": "The ROC for a right-sided sequence a^n u[n] is |z| < |a|.",
+      "correctAnswer": false,
+      "explanation": "حسب الصفحة العاشرة من المحاضرة الثالثة، ROC لمتتابعة يمنى الجانب a^n u[n] هي |z| > |a|."
+    },
+    {
+      "id": "tf43",
+      "type": "tf",
+      "question": "A system is stable if its ROC includes the unit circle |z|=1.",
+      "correctAnswer": true,
+      "explanation": "حسب الصفحة العاشرة والحادية عشرة من المحاضرة الثالثة، شمول ROC لدائرة الوحدة هو شرط الاستقرار."
+    },
+    {
+      "id": "tf44",
+      "type": "tf",
+      "question": "Digital filters are immune to noise like ADC noise and roundoff noise.",
+      "correctAnswer": false,
+      "explanation": "حسب الصفحة الثانية من المحاضرة الخامسة، المرشحات الرقمية تخضع لتأثيرات طول الكلمة المحدود التي تسبب ضوضاء مثل ADC noise و roundoff noise."
+    },
+    {
+      "id": "tf45",
+      "type": "tf",
+      "question": "The Discrete Fourier Transform (DFT) is a type of Fourier Transform used for continuous-time signals.",
+      "correctAnswer": false,
+      "explanation": "حسب الصفحة الثانية والثالثة من المحاضرة الرابعة، DFT هو للإشارات المتقطعة وذات الطول المحدود."
+    },
+    {
+      "id": "tf46",
+      "type": "tf",
+      "question": "The computational complexity of FFT is O(N^2) for a signal of length N.",
+      "correctAnswer": false,
+      "explanation": "حسب الصفحة الرابعة من المحاضرة الرابعة، التعقيد الحسابي لـ FFT هو O(N log N)."
+    },
+    {
+      "id": "tf47",
+      "type": "tf",
+      "question": "For a causal system, its impulse response h[n] is zero for n < 0.",
+      "correctAnswer": true,
+      "explanation": "هذا هو تعريف النظام السببي في النطاق الزمني."
+    },
+    {
+      "id": "tf48",
+      "type": "tf",
+      "question": "An FIR filter is characterized by a recursive difference equation.",
+      "correctAnswer": false,
+      "explanation": "حسب الصفحة الثالثة والسادسة من المحاضرة الخامسة، المعادلات الفرقية التكرارية هي سمة مميزة لمرشحات IIR، بينما FIR لها معادلة فرق غير تكرارية (معادلة الالتفاف المباشرة)."
+    },
+    {
+      "id": "tf49",
+      "type": "tf",
+      "question": "The transfer function of an FIR filter in the Z-domain always has poles.",
+      "correctAnswer": false,
+      "explanation": "حسب الصفحة الرابعة من المحاضرة الخامسة، دالة التحويل لمرشح FIR هي كثيرة حدود في z^-1، وليس لها مقام (إلا إذا كان 1)، وبالتالي ليس لها أقطاب بالمعنى التقليدي للدالة الكسرية (قد يكون لها أقطاب عند z=0)."
+    },
+    {
+      "id": "tf50",
+      "type": "tf",
+      "question": "The Inverse DFT (IDFT) is the inverse operation of the DFT.",
+      "correctAnswer": true,
+      "explanation": "حسب الصفحة الثالثة من المحاضرة الرابعة، IDFT يُستخدم لإعادة بناء الإشارة الزمنية من قيم DFT، وهو العملية العكسية لـ DFT."
+    },
+    {
+      "id": "tf51",
+      "type": "tf",
+      "question": "Passband ripple (Ap) measures the attenuation in the stopband.",
+      "correctAnswer": false,
+      "explanation": "حسب الصفحة السابعة من المحاضرة الخامسة، تموج نطاق التمرير (Ap) يقيس التباين في استجابة السعة ضمن نطاق التمرير، بينما توهين نطاق الإيقاف (As) يقيس الإضعاف في نطاق الإيقاف."
+    },
+    {
+      "id": "tf52",
+      "type": "tf",
+      "question": "The Time-Shift property of the DFT relates a time shift in the time domain to a phase shift in the frequency domain.",
+      "correctAnswer": true,
+      "explanation": "حسب الصفحة الثالثة من المحاضرة الرابعة، هذه هي خاصية الإزاحة الزمنية لـ DFT."
+    },
+    {
+      "id": "tf53",
+      "type": "tf",
+      "question": "A two-sided sequence has its ROC typically as a region inside a circle.",
+      "correctAnswer": false,
+      "explanation": "حسب الصفحة الحادية عشرة من المحاضرة الثالثة، ROC للمتتابعة ثنائية الجانب تكون حلقة (annulus) بين قطبين."
+    },
+    {
+      "id": "tf54",
+      "type": "tf",
+      "question": "Digital filters can be used at very low frequencies.",
+      "correctAnswer": true,
+      "explanation": "حسب الصفحة الثانية من المحاضرة الخامسة، هذه إحدى مميزات المرشحات الرقمية."
+    },
+    {
+      "id": "tf55",
+      "type": "tf",
+      "question": "The first step in digital filter design is calculating the filter coefficients.",
+      "correctAnswer": false,
+      "explanation": "حسب الصفحة السادسة والسابعة من المحاضرة الخامسة، الخطوة الأولى هي تحديد المواصفات."
+    },
+    {
+      "id": "tf56",
+      "type": "tf",
+      "question": "OFDM technology relies on Z-Transform.",
+      "correctAnswer": false,
+      "explanation": "حسب الصفحة السادسة من المحاضرة الرابعة، OFDM يعتمد على تحويلي DFT و IFFT."
+    },
+    {
+      "id": "tf57",
+      "type": "tf",
+      "question": "For a stable causal system, all poles of its Z-transform must be inside the unit circle.",
+      "correctAnswer": true,
+      "explanation": "حسب الصفحة العاشرة والحادية عشرة من المحاضرة الثالثة، هذا هو شرط الاستقرار والسببية معاً."
+    },
+    {
+      "id": "tf58",
+      "type": "tf",
+      "question": "The DFT of a real-valued signal exhibits symmetry.",
+      "correctAnswer": true,
+      "explanation": "حسب الصفحة السابعة من المحاضرة الرابعة، DFT لإشارة حقيقية يظهر خاصية تناظر."
+    },
+    {
+      "id": "tf59",
+      "type": "tf",
+      "question": "Image compression techniques like JPEG use the DFT directly.",
+      "correctAnswer": false,
+      "explanation": "حسب الصفحة الخامسة من المحاضرة الرابعة، JPEG يستخدم تحويلاً مرتبطاً (DCT)."
+    },
+    {
+      "id": "tf60",
+      "type": "tf",
+      "question": "A system is anti-causal if its ROC is inside the innermost pole.",
+      "correctAnswer": true,
+      "explanation": "حسب الصفحة الحادية عشرة من المحاضرة الثالثة، هذا هو شكل ROC للمتتابعات يسرى الجانب (غير السببية)."
+    },
+    {
+      "id": "tf61",
+      "type": "tf",
+      "question": "The Linearity property applies to both Z-transform and DFT.",
+      "correctAnswer": true,
+      "explanation": "تم ذكر خاصية الخطية لكليهما في المحاضرتين 3 و 4."
+    },
+    {
+      "id": "tf62",
+      "type": "tf",
+      "question": "The definition of the Z-transform for a causal signal starts the summation from n=0.",
+      "correctAnswer": true,
+      "explanation": "حسب الصفحة الثانية والعاشرة من المحاضرة الثالثة، بالنسبة للإشارات السببية، يبدأ مجموع تعريف Z من n=0."
+    },
+    {
+      "id": "tf63",
+      "type": "tf",
+      "question": "A digital filter's performance can vary significantly with environmental changes.",
+      "correctAnswer": false,
+      "explanation": "حسب الصفحة الثانية من المحاضرة الخامسة، من مميزات المرشحات الرقمية أنها أقل تأثراً بالتغيرات البيئية."
+    },
+    {
+      "id": "tf64",
+      "type": "tf",
+      "question": "The relationship y(n) = ∑ k=0 N-1 h(k)x(n-k) is the difference equation for an IIR filter.",
+      "correctAnswer": false,
+      "explanation": "حسب الصفحة الثالثة والسادسة من المحاضرة الخامسة، هذه هي معادلة الالتفاف المحدود التي تصف مرشح FIR."
+    },
+    {
+      "id": "tf65",
+      "type": "tf",
+      "question": "The parameter δs in a filter's frequency specification represents the passband deviation.",
+      "correctAnswer": false,
+      "explanation": "حسب الصفحة السابعة من المحاضرة الخامسة، δs هي انحراف نطاق الإيقاف (stopband deviation)، بينما δp هي انحراف نطاق التمرير."
+    },
+    {
+      "id": "tf66",
+      "type": "tf",
+      "question": "The Inverse DFT (IDFT) formula includes a scaling factor of N.",
+      "correctAnswer": false,
+      "explanation": "حسب الصفحة الثالثة من المحاضرة الرابعة، صيغة IDFT تحتوي على العامل 1/N."
+    },
+    {
+      "id": "tf67",
+      "type": "tf",
+      "question": "The width of the transition band of a filter is related to its stability.",
+      "correctAnswer": false,
+      "explanation": "عرض نطاق الانتقال يرتبط بحدة المرشح، بينما الاستقرار يرتبط بموقع الأقطاب أو شمول ROC لدائرة الوحدة."
+    },
+    {
+      "id": "tf68",
+      "type": "tf",
+      "question": "A system is unstable if its ROC includes the unit circle.",
+      "correctAnswer": false,
+      "explanation": "حسب الصفحة العاشرة والحادية عشرة من المحاضرة الثالثة، النظام يكون مستقراً إذا كانت ROC تشمل دائرة الوحدة."
+    },
+    {
+      "id": "tf69",
+      "type": "tf",
+      "question": "The Laplace transform is used for analog filter design.",
+      "correctAnswer": true,
+      "explanation": "حسب الصفحة الثانية من المحاضرة الثالثة، تحويل لابلاس يُستخدم في تصميم المرشحات التناظرية."
+    },
+    {
+      "id": "tf70",
+      "type": "tf",
+      "question": "The DFT provides insight into the spectral content of signals.",
+      "correctAnswer": true,
+      "explanation": "حسب الصفحة الثالثة والرابعة من المحاضرة الرابعة، إحدى وظائف DFT هي تحليل محتوى التردد (الطيف)."
+    },
+    {
+      "id": "tf71",
+      "type": "tf",
+      "question": "For a right-sided sequence, the ROC is always inside the innermost pole.",
+      "correctAnswer": false,
+      "explanation": "حسب الصفحة العاشرة من المحاضرة الثالثة، ROC للمتتابعات يمنى الجانب تكون خارج أبعد قطب."
+    },
+    {
+      "id": "tf72",
+      "type": "tf",
+      "question": "The ROC of a Z-transform uniquely determines the corresponding signal only if the ROC is specified.",
+      "correctAnswer": true,
+      "explanation": "حسب الصفحة العاشرة من المحاضرة الثالثة، تحويل Z يكون فريداً فقط عند تحديد ROC."
+    },
+    {
+      "id": "tf73",
+      "type": "tf",
+      "question": "FFT is primarily used for continuous-time signals.",
+      "correctAnswer": false,
+      "explanation": "حسب الصفحة الرابعة من المحاضرة الرابعة، FFT هي خوارزمية لحساب DFT، والذي يُستخدم للإشارات المتقطعة."
+    },
+    {
+      "id": "tf74",
+      "type": "tf",
+      "question": "Analyzing signals in the frequency domain can simplify understanding properties like filtering.",
+      "correctAnswer": true,
+      "explanation": "حسب الصفحة الثانية من المحاضرة الرابعة، نطاق التردد مهم لأنه يسهل فهم عمليات مثل الفلترة."
+    },
+    {
+      "id": "tf75",
+      "type": "tf",
+      "question": "The parameter Ap (passband ripple) is typically expressed in decibels.",
+      "correctAnswer": true,
+      "explanation": "حسب الصفحة السابعة من المحاضرة الخامسة، تموج نطاق التمرير يُحسب ويعبر عنه بالديسيبل."
+    },
+    {
+      "id": "tf76",
+      "type": "tf",
+      "question": "A recursive structure is characteristic of FIR filters.",
+      "correctAnswer": false,
+      "explanation": "الهياكل التكرارية سمة مميزة لمرشحات IIR."
+    },
+    {
+      "id": "tf77",
+      "type": "tf",
+      "question": "The transfer function of an IIR filter is a polynomial.",
+      "correctAnswer": false,
+      "explanation": "حسب الصفحة الرابعة من المحاضرة الخامسة، دالة التحويل لمرشح IIR هي دالة كسرية (ratio of polynomials)."
+    },
+    {
+      "id": "tf78",
+      "type": "tf",
+      "question": "The mathematical definition of the Z-transform involves an integral.",
+      "correctAnswer": false,
+      "explanation": "حسب الصفحة الثانية والعاشرة من المحاضرة الثالثة، تحويل Z يُعرف باستخدام مجموع."
+    },
+    {
+      "id": "tf79",
+      "type": "tf",
+      "question": "Digital filters can be used in medical applications like analyzing EEG signals.",
+      "correctAnswer": true,
+      "explanation": "حسب الصفحة السادسة من المحاضرة الرابعة، هذا أحد التطبيقات المذكورة لـ FFT (الذي يحسب DFT)."
+    },
+    {
+      "id": "tf80",
+      "type": "tf",
+      "question": "For sharp cutoff filters, FIR filters generally require fewer coefficients than IIR filters.",
+      "correctAnswer": false,
+      "explanation": "حسب الصفحة الرابعة من المحاضرة الخامسة، IIR تتطلب معاملات أقل لقطع حاد."
+    }
+  ]
+}

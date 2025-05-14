@@ -1,0 +1,505 @@
+{
+    "title": "FIR IIR Filters",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "mcq",
+        "question": "According to the document, a digital filter is primarily a:",
+        "options": [
+          "A) Mechanical device.",
+          "B) Electrical circuit.",
+          "C) Chemical process.",
+          "D) Mathematical algorithm."
+        ],
+        "correctAnswer": "D) Mathematical algorithm.",
+        "explanation": "حسب الصفحة الثانية، المرشح الرقمي هو خوارزمية رياضية يتم تنفيذها في الأجهزة و/أو البرمجيات."
+      },
+      {
+        "id": "q2",
+        "type": "mcq",
+        "question": "Digital filters operate on:",
+        "options": [
+          "A) Continuous-time analog signals directly.",
+          "B) Digitized analog signals or numbers.",
+          "C) Mechanical vibrations.",
+          "D) Light waves."
+        ],
+        "correctAnswer": "B) Digitized analog signals or numbers.",
+        "explanation": "حسب الصفحة الثانية، المرشحات الرقمية تعمل على الإشارات التناظرية التي تم تحويلها إلى صيغة رقمية (digitized analog signals) أو على أرقام تمثل بيانات."
+      },
+      {
+        "id": "q3",
+        "type": "mcq",
+        "question": "One advantage of digital filters over analog filters mentioned in the document is:",
+        "options": [
+          "A) Higher speed in real-time for very high frequencies.",
+          "B) Performance varies with environmental changes.",
+          "C) Can have exactly linear phase response.",
+          "D) More severe finite wordlength effects."
+        ],
+        "correctAnswer": "C) Can have exactly linear phase response.",
+        "explanation": "حسب الصفحة الثانية، إحدى مميزات المرشحات الرقمية هي القدرة على الحصول على استجابة طور خطية تماماً، مما يقلل من تشوه الطور."
+      },
+      {
+        "id": "q4",
+        "type": "mcq",
+        "question": "A main disadvantage of digital filters compared to analog filters, as listed in the document, is:",
+        "options": [
+          "A) Easier to design with arbitrary frequency responses.",
+          "B) Can be used at very low frequencies.",
+          "C) Speed limitation for high bandwidth signals in real time.",
+          "D) Performance does not vary with environmental changes."
+        ],
+        "correctAnswer": "C) Speed limitation for high bandwidth signals in real time.",
+        "explanation": "حسب الصفحة الثانية، إحدى العيوب الرئيسية للمرشحات الرقمية هي محدودية سرعتها عند التعامل مع الإشارات ذات عرض النطاق الترددي العالي جداً في الوقت الفعلي مقارنة بالمرشحات التناظرية."
+      },
+      {
+        "id": "q5",
+        "type": "mcq",
+        "question": "Digital filters are broadly classified into two main types based on their impulse response length:",
+        "options": [
+          "A) Low-pass and High-pass.",
+          "B) Band-pass and Band-stop.",
+          "C) FIR and IIR.",
+          "D) Analog and Digital."
+        ],
+        "correctAnswer": "C) FIR and IIR.",
+        "explanation": "حسب الصفحة الثالثة، تُصنف المرشحات الرقمية بشكل أساسي إلى نوعين: FIR (استجابة نبضية محدودة) و IIR (استجابة نبضية لا محدودة)."
+      },
+      {
+        "id": "q6",
+        "type": "mcq",
+        "question": "An FIR filter is characterized by an impulse response that is:",
+        "options": [
+          "A) Infinite in length.",
+          "B) Finite in length.",
+          "C) Always zero.",
+          "D) Periodic."
+        ],
+        "correctAnswer": "B) Finite in length.",
+        "explanation": "حسب الصفحة الثالثة، مرشحات الاستجابة النبضية المحدودة (FIR) تتميز بأن استجابتها النبضية تكون ذات طول محدود."
+      },
+      {
+        "id": "q7",
+        "type": "mcq",
+        "question": "The output y(n) of a digital filter is related to its input x(n) and impulse response h(k) by the:",
+        "options": [
+          "A) Multiplication operation.",
+          "B) Differentiation operation.",
+          "C) Integration operation.",
+          "D) Convolution sum."
+        ],
+        "correctAnswer": "D) Convolution sum.",
+        "explanation": "حسب الصفحة الثالثة، العلاقة بين دخل وخرج المرشح الرقمي واستجابته النبضية تُعطى بواسطة مجموع الالتفاف (convolution sum)."
+      },
+      {
+        "id": "q8",
+        "type": "mcq",
+        "question": "The difference equation for an IIR filter typically includes terms that depend on:",
+        "options": [
+          "A) Only present and past input samples.",
+          "B) Only future input samples.",
+          "C) Present and past input samples, and past output samples.",
+          "D) Only future output samples."
+        ],
+        "correctAnswer": "C) Present and past input samples, and past output samples.",
+        "explanation": "حسب الصفحة الثالثة والسادسة، معادلة الفرق لمرشح IIR تكون تكرارية (recursive)، حيث يعتمد الخرج الحالي على قيم الدخل الحالية والسابقة بالإضافة إلى قيم الخرج السابقة (التغذية الراجعة)."
+      },
+      {
+        "id": "q9",
+        "type": "mcq",
+        "question": "The transfer function H(z) of an FIR filter in the Z-domain is always in the form of a:",
+        "options": [
+          "A) Rational function (ratio of polynomials).",
+          "B) Polynomial in z−1 .",
+          "C) Sine or Cosine function.",
+          "D) Complex exponential."
+        ],
+        "correctAnswer": "B) Polynomial in z−1 .",
+        "explanation": "حسب الصفحة الرابعة، دالة التحويل لمرشح FIR في نطاق Z هي دائماً كثيرة حدود (polynomial) في z−1 ، وتعتمد مباشرة على معاملات الاستجابة النبضية."
+      },
+      {
+        "id": "q10",
+        "type": "mcq",
+        "question": "The transfer function H(z) of an IIR filter in the Z-domain is always in the form of a:",
+        "options": [
+          "A) Polynomial in z−1 .",
+          "B) Finite sum of terms.",
+          "C) Rational function (ratio of polynomials).",
+          "D) Single constant."
+        ],
+        "correctAnswer": "C) Rational function (ratio of polynomials).",
+        "explanation": "حسب الصفحة الرابعة، دالة التحويل لمرشح IIR في نطاق Z هي دائماً دالة كسرية (rational function)، أي نسبة بين كثيرتي حدود في z−1 ."
+      },
+      {
+        "id": "q11",
+        "type": "mcq",
+        "question": "Which type of digital filter is always stable when realized non-recursively?",
+        "options": [
+          "A) IIR filter.",
+          "B) FIR filter.",
+          "C) Both FIR and IIR filters.",
+          "D) Neither FIR nor IIR filters."
+        ],
+        "correctAnswer": "B) FIR filter.",
+        "explanation": "حسب الصفحة الرابعة، مرشحات FIR التي تُنفذ بشكل غير تكراري تكون دائماً مستقرة. استقرار IIR لا يُضمن دائماً."
+      },
+      {
+        "id": "q12",
+        "type": "mcq",
+        "question": "If a sharp cutoff filter is required with fewer coefficients, which type of filter is generally preferred according to the document guidelines?",
+        "options": [
+          "A) FIR filter.",
+          "B) IIR filter.",
+          "C) Both require the same number of coefficients.",
+          "D) Neither can achieve sharp cutoff."
+        ],
+        "correctAnswer": "B) IIR filter.",
+        "explanation": "حسب الصفحة الرابعة (إرشادات الاختيار)، عندما تكون المتطلبات هي قطع حاد وعدد أقل من المعاملات، يُفضل استخدام مرشحات IIR لأنها تتطلب معاملات أقل من FIR لتحقيق نفس حدة القطع."
+      },
+      {
+        "id": "q13",
+        "type": "mcq",
+        "question": "If little or no phase distortion is desired in the filtered signal, which type of filter is generally preferred?",
+        "options": [
+          "A) FIR filter.",
+          "B) IIR filter.",
+          "C) Both have the same phase response.",
+          "D) Neither can avoid phase distortion."
+        ],
+        "correctAnswer": "A) FIR filter.",
+        "explanation": "حسب الصفحة الرابعة، مرشحات FIR يمكن أن تمتلك استجابة طور خطية تماماً، مما يعني عدم وجود تشوه في الطور. لذلك تُفضل عندما يكون تشوه الطور غير مرغوب فيه."
+      },
+      {
+        "id": "q14",
+        "type": "mcq",
+        "question": "The effects of finite wordlength (like roundoff noise) are generally more severe in:",
+        "options": [
+          "A) FIR filters.",
+          "B) IIR filters.",
+          "C) Both are equally affected.",
+          "D) Neither is affected."
+        ],
+        "correctAnswer": "B) IIR filters.",
+        "explanation": "حسب الصفحة الرابعة، تأثيرات طول الكلمة المحدود تكون أكثر شدة في مرشحات IIR مقارنة بمرشحات FIR."
+      },
+      {
+        "id": "q15",
+        "type": "mcq",
+        "question": "The first step in the design of a digital filter is typically:",
+        "options": [
+          "A) Calculation of filter coefficients.",
+          "B) Implementation of the filter.",
+          "C) Specification of the filter requirements.",
+          "D) Analysis of finite wordlength effects."
+        ],
+        "correctAnswer": "C) Specification of the filter requirements.",
+        "explanation": "حسب الصفحة السادسة والسابعة، الخطوة الأولى في عملية تصميم المرشح الرقمي هي تحديد المواصفات والمتطلبات المطلوبة للمرشح."
+      },
+      {
+        "id": "q16",
+        "type": "mcq",
+        "question": "Filter characteristics that need to be specified during design include:",
+        "options": [
+          "A) The cost of the filter.",
+          "B) The desired amplitude and/or phase responses.",
+          "C) The highest frequency of interest of the input signal.",
+          "D) The manner of implementation (hardware/software)."
+        ],
+        "correctAnswer": "B) The desired amplitude and/or phase responses.",
+        "explanation": "حسب الصفحة السابعة، خصائص المرشح نفسها التي يجب تحديدها تشمل استجابات السعة و/أو الطور المطلوبة والتفاوتات المسموحة بها. الخيارات A, C, D هي أنواع أخرى من المواصفات (قيود تصميم، خصائص إشارة، طريقة تنفيذ)."
+      },
+      {
+        "id": "q17",
+        "type": "mcq",
+        "question": "The width of the transition band in a filter's frequency response plot indicates:",
+        "options": [
+          "A) The filter's stability.",
+          "B) How sharp the filter is.",
+          "C) The filter's phase response.",
+          "D) The filter's cost."
+        ],
+        "correctAnswer": "B) How sharp the filter is.",
+        "explanation": "حسب الصفحة السابعة، عرض نطاق الانتقال بين نطاقي التمرير والإيقاف يحدد مدى حدة المرشح. كلما كان النطاق أضيق، كان المرشح أكثر حدة."
+      },
+      {
+        "id": "q18",
+        "type": "mcq",
+        "question": "In a low-pass filter tolerance scheme, δp \n​ represents the:",
+        "options": [
+          "A) Stopband attenuation.",
+          "B) Passband deviation.",
+          "C) Stopband edge frequency.",
+          "D) Transition band width."
+        ],
+        "correctAnswer": "B) Passband deviation.",
+        "explanation": "حسب الصفحة السابعة (شرح مخطط التسامح)، δp \n​ هي انحراف نطاق التمرير (passband deviation)، وتمثل الحد الأقصى للانحراف عن السعة المثالية في نطاق التمرير."
+      },
+      {
+        "id": "q19",
+        "type": "mcq",
+        "question": "Stopband attenuation (As \n​) in decibels is calculated using the stopband deviation (δs \n​) by the formula:",
+        "options": [
+          "A) 20log10 \n​(1+δs \n​).",
+          "B) −20log10 \n​(δs \n​).",
+          "C) 10log10 \n​(δs \n2 \n​).",
+          "D) 1/δs \n​."
+        ],
+        "correctAnswer": "B) −20log10 \n​(δs \n​).",
+        "explanation": "حسب الصفحة السابعة (شرح مخطط التسامح)، توهين نطاق الإيقاف يُعطى بالصيغة As \n​=−20log10 \n​δs \n​."
+      },
+      {
+        "id": "q20",
+        "type": "mcq",
+        "question": "Passband ripple (Ap \n​) in decibels is calculated using the passband deviation (δp \n​) by the formula:",
+        "options": [
+          "A) 20log10 \n​(1+δp \n​).",
+          "B) −20log10 \n​(1−δp \n​).",
+          "C) 10log10 \n​(δp \n​).",
+          "D) 1+δp \n​."
+        ],
+        "correctAnswer": "A) 20log10 \n​(1+δp \n​).",
+        "explanation": "حسب الصفحة السابعة (شرح مخطط التسامح)، تموج نطاق التمرير يُعطى بالصيغة Ap \n​=20log10 \n​(1+δp \n​)."
+      },
+      {
+        "id": "q21",
+        "type": "mcq",
+        "question": "Based on the example in the document (Pages 5 & 6), for the same amplitude response specification:",
+        "options": [
+          "A) The FIR filter had fewer coefficients than the IIR filter.",
+          "B) The IIR filter had fewer coefficients than the FIR filter.",
+          "C) Both filters had the same number of coefficients.",
+          "D) The number of coefficients cannot be determined from the example."
+        ],
+        "correctAnswer": "B) The IIR filter had fewer coefficients than the FIR filter.",
+        "explanation": "حسب الجدول والملخص في الصفحة السادسة للمثال، مرشح IIR كان يتطلب عدداً أقل من المعاملات (5 ضرب و 4 جمع) مقارنة بمرشح FIR (12 ضرب و 11 جمع) لتحقيق نفس الاستجابة السعة."
+      },
+      {
+        "id": "q22",
+        "type": "mcq",
+        "question": "In the block diagram of the IIR filter example (Page 5), the elements labeled z−1 \n represent:",
+        "options": [
+          "A) Gain blocks.",
+          "B) Multiplication by frequency.",
+          "C) Delay elements (by one sample).",
+          "D) Summation points."
+        ],
+        "correctAnswer": "C) Delay elements (by one sample).",
+        "explanation": "حسب الصفحة الثالثة والخامسة (في الرسومات التخطيطية)، الرمز z−1 \n في نطاق Z يمثل تأخيراً بمقدار عينة واحدة في النطاق الزمني. هذه العناصر هي عناصر التأخير."
+      },
+      {
+        "id": "q23",
+        "type": "mcq",
+        "question": "The difference equation y(n)=∑k=0 \nN−1 \n​h(k)x(n−k) represents a filter that is:",
+        "options": [
+          "A) Recursive.",
+          "B) Non-recursive.",
+          "C) Always unstable.",
+          "D) Only applicable to analog signals."
+        ],
+        "correctAnswer": "B) Non-recursive.",
+        "explanation": "حسب الصفحة الثالثة والسادسة، هذه المعادلة هي صيغة الالتفاف المحدود التي تصف مرشح FIR. مرشحات FIR التي يتم تمثيلها بهذه الصيغة (غير التكرارية) تكون دائماً مستقرة ولا تعتمد على قيم الخرج السابقة في الحساب المباشر بهذه الصيغة."
+      },
+      {
+        "id": "q24",
+        "type": "mcq",
+        "question": "According to the comparison table (Page 4), which type of filter is generally easier to synthesize if analog filter prototypes can be readily transformed?",
+        "options": [
+          "A) FIR filters.",
+          "B) IIR filters.",
+          "C) Both are equally easy.",
+          "D) Neither can be transformed from analog."
+        ],
+        "correctAnswer": "B) IIR filters.",
+        "explanation": "حسب الصفحة الرابعة (الجدول)، يمكن تحويل المرشحات التناظرية بسهولة إلى مرشحات رقمية مكافئة من نوع IIR."
+      },
+      {
+        "id": "q25",
+        "type": "mcq",
+        "question": "If a design constraint is the cost of the filter, this falls under which type of specification?",
+        "options": [
+          "A) Signal characteristics.",
+          "B) Filter characteristics.",
+          "C) Manner of implementation.",
+          "D) Other design constraints."
+        ],
+        "correctAnswer": "D) Other design constraints.",
+        "explanation": "حسب الصفحة السابعة (أنواع المواصفات)، قيود مثل تكلفة المرشح تندرج تحت \"قيود التصميم الأخرى\"."
+      },
+      {
+        "id": "tf1",
+        "type": "tf",
+        "question": "Digital filters operate directly on continuous-time analog signals.",
+        "correctAnswer": false,
+        "explanation": "حسب الصفحة الثانية، المرشحات الرقمية تعمل على الإشارات التي تم تحويلها إلى صيغة رقمية، وليس على الإشارات التناظرية المستمرة مباشرة."
+      },
+      {
+        "id": "tf2",
+        "type": "tf",
+        "question": "One advantage of digital filters is that their performance does not vary significantly with environmental changes like temperature.",
+        "correctAnswer": true,
+        "explanation": "حسب الصفحة الثانية، هذه إحدى المميزات المذكورة للمرشحات الرقمية مقارنة بالتناظرية."
+      },
+      {
+        "id": "tf3",
+        "type": "tf",
+        "question": "Finite wordlength effects are generally less severe in IIR filters compared to FIR filters.",
+        "correctAnswer": false,
+        "explanation": "حسب الصفحة الرابعة، تأثيرات طول الكلمة المحدود تكون أكثر شدة في مرشحات IIR."
+      },
+      {
+        "id": "tf4",
+        "type": "tf",
+        "question": "An IIR filter is characterized by an impulse response that is finite in length.",
+        "correctAnswer": false,
+        "explanation": "حسب الصفحة الثالثة، مرشحات IIR لديها استجابة نبضية لا نهائية الطول (نظرياً)."
+      },
+      {
+        "id": "tf5",
+        "type": "tf",
+        "question": "The output of an FIR filter at time n depends only on the input samples at or before time n.",
+        "correctAnswer": true,
+        "explanation": "حسب الصفحة الثالثة والسادسة، معادلة الفرق لمرشح FIR هي convolution sum تعتمد على الدخل الحالي والسابق فقط، ولا تعتمد على قيم الخرج السابقة."
+      },
+      {
+        "id": "tf6",
+        "type": "tf",
+        "question": "The transfer function of an IIR filter is always a polynomial in z−1 \n.",
+        "correctAnswer": false,
+        "explanation": "حسب الصفحة الرابعة، دالة التحويل لمرشح IIR هي دالة كسرية (rational function)، وليست مجرد كثيرة حدود."
+      },
+      {
+        "id": "tf7",
+        "type": "tf",
+        "question": "A recursive filter structure is characteristic of FIR filters.",
+        "correctAnswer": false,
+        "explanation": "الهيكليات التكرارية (التي تتضمن تغذية راجعة) هي سمة مميزة لمرشحات IIR، بينما مرشحات FIR تكون غير تكرارية في تنفيذها المباشر."
+      },
+      {
+        "id": "tf8",
+        "type": "tf",
+        "question": "The stability of FIR filters cannot be guaranteed.",
+        "correctAnswer": false,
+        "explanation": "حسب الصفحة الرابعة، مرشحات FIR التي تُنفذ بشكل غير تكراري تكون دائماً مستقرة."
+      },
+      {
+        "id": "tf9",
+        "type": "tf",
+        "question": "For sharp cutoff filters, IIR filters generally require more coefficients than FIR filters.",
+        "correctAnswer": false,
+        "explanation": "حسب الصفحة الرابعة، مرشحات IIR تتطلب عدداً أقل من المعاملات لتحقيق نفس حدة القطع مقارنة بـ FIR."
+      },
+      {
+        "id": "tf10",
+        "type": "tf",
+        "question": "Passband deviation (δp \n​) and stopband deviation (δs \n​) are parameters used to specify filter requirements in the time domain.",
+        "correctAnswer": false,
+        "explanation": "حسب الصفحة السابعة، هذه المعلمات تُستخدم لتحديد مواصفات المرشح في نطاق التردد."
+      },
+      {
+        "id": "tf11",
+        "type": "tf",
+        "question": "The width of the transition band is related to how sharp the filter is.",
+        "correctAnswer": true,
+        "explanation": "حسب الصفحة السابعة، عرض نطاق الانتقال يحدد مدى حدة انتقال المرشح بين نطاقي التمرير والإيقاف."
+      },
+      {
+        "id": "tf12",
+        "type": "tf",
+        "question": "Stopband attenuation (As \n​) is typically expressed in decibels.",
+        "correctAnswer": true,
+        "explanation": "حسب الصفحة السابعة، توهين نطاق الإيقاف يُحسب ويُعبر عنه بوحدة الديسيبل (dB)."
+      },
+      {
+        "id": "tf13",
+        "type": "tf",
+        "question": "The example in the document shows that for identical amplitude response, the IIR filter required more storage locations than the FIR filter.",
+        "correctAnswer": false,
+        "explanation": "حسب الجدول في الصفحة السادسة، مرشح IIR في المثال تطلب مواقع تخزين أقل من مرشح FIR."
+      },
+      {
+        "id": "tf14",
+        "type": "tf",
+        "question": "The first step in filter design is the implementation of the filter in hardware or software.",
+        "correctAnswer": false,
+        "explanation": "حسب الصفحة السادسة والسابعة، الخطوة الأولى هي تحديد المواصفات المطلوبة، والتنفيذ هو الخطوة الأخيرة."
+      },
+      {
+        "id": "tf15",
+        "type": "tf",
+        "question": "The equation y(n)=∑k=0 \nN \n​bk \n​x(n−k)−∑k=1 \nM \n​ak \n​y(n−k) is a recursive difference equation for an IIR filter.",
+        "correctAnswer": true,
+        "explanation": "حسب الصفحة الثالثة والسادسة، هذه هي الصيغة التكرارية لمعادلة الفرق لمرشح IIR، والتي تتضمن حدود تعتمد على الخرج السابق (y(n−k))."
+      },
+      {
+        "id": "tf16",
+        "type": "tf",
+        "question": "A digital filter can be represented by its impulse response h(k).",
+        "correctAnswer": true,
+        "explanation": "حسب الصفحة الثالثة، هذا هو تمثيل أساسي لأي نظام خطي ثابت زمنياً (LTI)، بما في ذلك المرشحات الرقمية."
+      },
+      {
+        "id": "tf17",
+        "type": "tf",
+        "question": "Digital filters are used at very high frequencies more effectively than analog filters.",
+        "correctAnswer": false,
+        "explanation": "حسب الصفحة الثانية، المرشحات الرقمية لديها محدودية في السرعة تجعلها أقل فعالية من التناظرية عند الترددات العالية جداً في الوقت الفعلي."
+      },
+      {
+        "id": "tf18",
+        "type": "tf",
+        "question": "Designing filters with arbitrary frequency responses is generally easier with IIR filters compared to FIR filters if CAD tools are not available.",
+        "correctAnswer": true,
+        "explanation": "حسب الصفحة الرابعة (الجدول، السطر 6)، قد يكون تصميم مرشحات IIR جبرياً أقل صعوبة مقارنة بمرشحات FIR إذا لم تتوفر أدوات تصميم بمساعدة الحاسوب (CAD)."
+      },
+      {
+        "id": "tf19",
+        "type": "tf",
+        "question": "The block diagram representation of an FIR filter includes feedback loops.",
+        "correctAnswer": false,
+        "explanation": "حسب الصفحة الخامسة (الرسم 3b) والسادسة (معادلة الفرق)، هيكلية مرشح FIR المباشرة لا تتضمن حلقات تغذية راجعة؛ تعتمد فقط على قيم الدخل السابقة."
+      },
+      {
+        "id": "tf20",
+        "type": "tf",
+        "question": "A digital filter designed using a programmable processor can have its frequency response automatically adjusted.",
+        "correctAnswer": true,
+        "explanation": "حسب الصفحة الثانية، هذه إحدى مميزات المرشحات الرقمية المذكورة."
+      },
+      {
+        "id": "tf21",
+        "type": "tf",
+        "question": "The purpose of the output filter in a real-time digital filter system (Fig 1, Page 2) is to convert the digital signal back to analog.",
+        "correctAnswer": false,
+        "explanation": "حسب الصفحة الثانية (الرسم 1)، محول الرقمي التناظري (DAC) هو الذي يحول الإشارة من رقمية إلى تناظرية. مرشح الخرج (Output filter) هو مرشح تناظري يأتي بعد DAC لتنعيم الإشارة التناظرية الناتجة وإزالة الترددات غير المرغوبة التي قد تنتج عن عملية التحويل الرقمي التناظري."
+      },
+      {
+        "id": "tf22",
+        "type": "tf",
+        "question": "Passband ripple (Ap \n​) measures the degree of attenuation in the stopband.",
+        "correctAnswer": false,
+        "explanation": "حسب الصفحة السابعة، تموج نطاق التمرير (Ap \n​) يقيس التباين في استجابة السعة ضمن نطاق التمرير، بينما توهين نطاق الإيقاف (As \n​) يقيس الإضعاف في نطاق الإيقاف."
+      },
+      {
+        "id": "tf23",
+        "type": "tf",
+        "question": "For a low-pass filter, the passband is the range of frequencies that are significantly attenuated.",
+        "correctAnswer": false,
+        "explanation": "حسب الصفحة السابعة، نطاق التمرير (Passband) هو نطاق الترددات التي يُسمح لها بالمرور عبر المرشح بأقل قدر من الإضعاف."
+      },
+      {
+        "id": "tf24",
+        "type": "tf",
+        "question": "The second step in the design of a digital filter is the specification of the filter requirements.",
+        "correctAnswer": false,
+        "explanation": "حسب الصفحة السادسة والسابعة، تحديد المواصفات هي الخطوة الأولى في التصميم."
+      },
+      {
+        "id": "tf25",
+        "type": "tf",
+        "question": "In the example on Page 6, the IIR filter required fewer multiplications per output sample compared to the FIR filter.",
+        "correctAnswer": true,
+        "explanation": "حسب الجدول في الصفحة السادسة للمثال، مرشح IIR تطلب 5 عمليات ضرب بينما مرشح FIR تطلب 12 عملية ضرب لكل عينة خرج."
+      }
+    ]
+  }

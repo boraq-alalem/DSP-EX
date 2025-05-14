@@ -1,0 +1,624 @@
+/* General body and base colors and direction */
+body {
+    font-family: 'Cairo', sans-serif;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.4s ease, color 0.4s ease;
+    direction: ltr; /* Set default direction to LTR */
+    text-align: left; /* Align text to the left */
+
+    /* Light Mode Defaults (Inspired by inbio-react white version) */
+    --body-bg: #f0f2f5; /* Light grey background */
+    --body-color: #1f2b3e; /* Dark text color */
+    --container-bg: #ffffff; /* White background for cards/containers */
+    --header-bg-light: linear-gradient(90deg, #ffffff 60%, #f0f2f5 100%); /* Subtle gradient for header */
+    --border-color: #e0e0e0; /* Light border color */
+
+    /* Soft, diffused shadows (Inspired by inbio-react) */
+    --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* For larger containers */
+    --card-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); /* For smaller cards/items */
+    --card-hover-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* For hover effect */
+    --button-shadow: 0 4px 10px rgba(0, 123, 255, 0.1); /* For buttons */
+    --button-hover-shadow: 0 6px 15px rgba(0, 123, 255, 0.2);
+    --end-button-shadow: 0 4px 10px rgba(220, 53, 69, 0.1);
+    --end-button-hover-shadow: 0 6px 15px rgba(220, 53, 69, 0.2);
+
+
+    --primary-color: #007bff; /* Vibrant blue */
+    --primary-color-darker: #0056b3; /* Darker blue for hover */
+    --secondary-color: #6c757d; /* Grey */
+    --text-muted: #666; /* Muted text color */
+
+
+    /* Quiz List Item */
+    --quiz-item-bg: #ffffff; /* White background */
+    --quiz-item-border: #e0e0e0;
+    --last-result-color: #666;
+
+    /* Button Colors */
+    --button-bg: #007bff;
+    --button-color: #ffffff;
+    --button-hover-bg: #0056b3;
+
+    /* Result Colors */
+    --success-color: #28a745; /* Green */
+    --error-color: #dc3545; /* Red */
+    --progress-bg: #e9ecef;
+    --progress-success: #28a745;
+    --progress-error: #dc3545;
+
+    /* Choice Colors (Quiz Page) */
+    --choice-bg: #f7f7fa; /* Very light grey */
+    --choice-border: #ddd;
+    --choice-selected-bg: #cfe2ff; /* Light blue */
+    --choice-selected-border: #007bff;
+    --choice-correct-bg: #d4edda; /* Light green */
+    --choice-correct-text: #155724; /* Darker green text */
+    --choice-correct-border: #28a745;
+    --choice-wrong-bg: #f8d7da; /* Light red */
+    --choice-wrong-text: #721c24; /* Darker red text */
+    --choice-wrong-border: #dc3545;
+
+     /* Explanation */
+    --explanation-bg: #e9ecef; /* Light background for explanation */
+    --explanation-border: #ced4da; /* Subtle border */
+    --explanation-color: #495057; /* Dark text */
+
+}
+
+/* Dark Mode Specific Styles (Inspired by inbio-react dark version) */
+body.dark-mode {
+    --body-bg: #1a1a1a; /* Dark background */
+    --body-color: #e0e0e0; /* Light text color */
+    --container-bg: #2c2c2c; /* Slightly lighter dark for cards */
+    --header-bg-dark: linear-gradient(90deg, #2c2c2c 60%, #3c3c3c 100%); /* Dark gradient */
+    --border-color: #555; /* Darker border color */
+
+    /* Dark mode shadows */
+    --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    --card-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    --card-hover-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+     --button-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+    --button-hover-shadow: 0 6px 15px rgba(0, 123, 255, 0.4);
+     --end-button-shadow: 0 4px 10px rgba(220, 53, 69, 0.3);
+    --end-button-hover-shadow: 0 6px 15px rgba(220, 53, 69, 0.4);
+
+
+    --primary-color: #64b5f6; /* Lighter blue for dark mode */
+    --primary-color-darker: #2196f3;
+
+    --text-muted: #a0a0a0;
+
+    /* Quiz List Item */
+    --quiz-item-bg: #3c3c3c; /* Dark background */
+    --quiz-item-border: #555;
+    --last-result-color: #a0a0a0;
+
+     /* Button Colors (using dark mode primary color) */
+    --button-bg: var(--primary-color);
+    --button-color: #ffffff;
+    --button-hover-bg: var(--primary-color-darker);
+
+
+     /* Choice Colors (Quiz Page) */
+    --choice-bg: #444;
+    --choice-border: #666;
+    --choice-selected-bg: #004085; /* Darker blue */
+    --choice-selected-border: #007bff;
+     --choice-correct-bg: #155724; /* Darker green */
+    --choice-correct-text: #d4edda; /* Light green text */
+    --choice-correct-border: #28a745;
+    --choice-wrong-bg: #721c24; /* Darker red */
+    --choice-wrong-text: #f8d7da; /* Light red text */
+    --choice-wrong-border: #dc3545;
+
+     /* Explanation */
+    --explanation-bg: #495057; /* Darker background for explanation */
+    --explanation-border: #6c757d; /* Subtle border */
+    --explanation-color: #e0e0e0; /* Light text */
+
+}
+
+
+body {
+    background-color: var(--body-bg);
+    color: var(--body-color);
+}
+
+
+/* Container for centering content */
+.container {
+    width: 95%;
+    max-width: 800px; /* Slightly wider container */
+    margin: 32px auto;
+    padding: 24px; /* Adjusted padding */
+    background-color: var(--container-bg);
+    border-radius: 12px; /* Smoother corners */
+    box-shadow: var(--box-shadow);
+    transition: background-color 0.4s ease, box-shadow 0.4s ease;
+    /* Direction is inherited from body (LTR) */
+    text-align: left;
+}
+
+/* Header Bar on Index Page */
+.header-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem; /* More space below header */
+    padding-bottom: 1rem; /* Padding inside header bar */
+    border-bottom: 1px solid var(--border-color); /* Separator line */
+}
+
+.header-bar h1 {
+    margin: 0;
+    font-size: 2.2rem; /* Larger title */
+    color: var(--primary-color);
+}
+
+/* Toggle Dark Mode Button */
+#toggle-dark {
+    background: none;
+    border: none;
+    font-size: 1.8rem; /* Larger icon */
+    cursor: pointer;
+    color: var(--primary-color);
+    border-radius: 50%;
+    padding: 0.4em; /* More padding */
+    transition: background 0.2s ease;
+    line-height: 1; /* Center icon vertically */
+    height: 50px;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#toggle-dark:hover {
+    background: rgba(0, 123, 255, 0.1); /* Subtle hover effect */
+}
+
+/* Quiz List Styling */
+#quiz-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; /* Space between items */
+}
+
+/* Individual Quiz Item */
+.quiz-item {
+    background-color: var(--quiz-item-bg);
+    padding: 1.2rem 1.5rem; /* More padding */
+    border-radius: 10px; /* Rounded corners */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid var(--quiz-item-border);
+    box-shadow: var(--card-shadow); /* Use card shadow */
+}
+
+.quiz-item:hover {
+     box-shadow: var(--card-hover-shadow); /* Use card hover shadow */
+}
+
+
+.quiz-item div {
+    flex-grow: 1; /* Allow text area to grow */
+    margin-right: 1rem; /* Space between text and button (LTR) */
+}
+
+.quiz-item strong {
+    font-size: 1.1rem; /* Larger quiz title */
+    color: var(--body-color); /* Use body color for title */
+}
+
+.quiz-item .last-result {
+    font-size: 0.9rem;
+    color: var(--last-result-color); /* Muted color for result text */
+    margin-top: 0.3rem; /* Space below title */
+}
+
+.quiz-item .last-result span {
+    font-weight: bold;
+    /* Colors set by script.js using --success-color/--error-color */
+}
+
+/* Quiz Item Button */
+.quiz-item button {
+    background-color: var(--button-bg);
+    color: var(--button-color);
+    border: none;
+    padding: 0.6rem 1.5rem; /* Adjusted padding */
+    border-radius: 8px; /* Rounded button corners */
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    font-family: inherit;
+    font-weight: 700;
+    box-shadow: var(--button-shadow); /* Use button shadow */
+}
+
+.quiz-item button:hover {
+    background-color: var(--button-hover-bg);
+    box-shadow: var(--button-hover-shadow); /* Use button hover shadow */
+}
+
+
+/* === Quiz Page Specific Styles === */
+
+/* Quiz Header on Quiz Page */
+.quiz-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--header-bg-light); /* Gradient background (light mode) */
+    padding: 1rem 24px; /* Padding */
+    border-radius: 0 0 18px 18px; /* Rounded bottom corners */
+    box-shadow: var(--box-shadow); /* Use main box shadow */
+    margin-bottom: 2rem; /* Space below header */
+    transition: background 0.4s ease, color 0.4s ease, box-shadow 0.4s ease;
+}
+
+body.dark-mode .quiz-header {
+    background: var(--header-bg-dark); /* Gradient background (dark mode) */
+}
+
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem; /* Space between back link and end button */
+}
+
+.end-quiz-btn {
+    background: linear-gradient(90deg, #dc3545 60%, #e3616f 100%); /* Red gradient for end button */
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 0.5rem 1.2rem;
+    font-size: 1rem;
+    font-weight: bold;
+    box-shadow: var(--end-button-shadow); /* Use end button shadow */
+    cursor: pointer;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+.end-quiz-btn:hover {
+    background: linear-gradient(90deg, #c82333 60%, #dc3545 100%);
+    box-shadow: var(--end-button-hover-shadow); /* Use end button hover shadow */
+}
+
+body.dark-mode .end-quiz-btn {
+     /* No change needed, variables handle colors */
+     box-shadow: var(--end-button-shadow); /* Use dark mode variable */
+}
+body.dark-mode .end-quiz-btn:hover {
+      box-shadow: var(--end-button-hover-shadow); /* Use dark mode variable */
+}
+
+
+.quiz-header .back-link {
+    color: var(--primary-color);
+    background: none;
+    border: none;
+    font-size: 1.1em;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 7px;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+.quiz-header .back-link:hover {
+    background: rgba(0, 123, 255, 0.1);
+    color: var(--primary-color-darker);
+}
+
+body.dark-mode .quiz-header .back-link {
+    color: var(--primary-color); /* Use dark mode primary color */
+}
+body.dark-mode .quiz-header .back-link:hover {
+     background: rgba(100, 181, 246, 0.1); /* Hover using dark mode primary color */
+     color: var(--primary-color-darker);
+}
+
+
+/* Question Styling */
+.question {
+    margin-bottom: 1.5rem;
+    padding: 1.2rem;
+    background: var(--container-bg); /* Use container background for questions */
+    border-radius: 10px;
+    box-shadow: var(--card-shadow); /* Use card shadow */
+    transition: background-color 0.4s ease, box-shadow 0.4s ease;
+    border: 1px solid var(--border-color);
+}
+
+.question h3 {
+    margin-top: 0;
+    font-size: 1.15rem;
+    color: var(--body-color); /* Use body color for question text */
+    margin-bottom: 1rem;
+}
+
+/* Choices Styling */
+.choices label {
+    display: flex; /* Use flexbox for alignment */
+    align-items: center;
+    margin-bottom: 0.6rem; /* More space between choices */
+    padding: 0.8rem 1rem; /* More padding */
+    border-radius: 8px;
+    background: var(--choice-bg);
+    cursor: pointer;
+    transition: background 0.2s ease, border-color 0.2s ease;
+    border: 1px solid var(--choice-border);
+}
+.choices label:hover {
+    background: rgba(0, 123, 255, 0.05); /* Subtle hover */
+}
+
+body.dark-mode .choices label:hover {
+    background: rgba(100, 181, 246, 0.05); /* Hover using dark mode primary color */
+}
+
+.choices input[type="radio"] {
+     /* Hide default radio button, rely on label styling */
+    display: none;
+}
+
+.choices label span {
+    flex-grow: 1; /* Allow text to fill space */
+     /* Margin handled by ::before */
+}
+
+
+/* Custom Radio Button Indicator (Adjusted for LTR) */
+.choices label::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--secondary-color); /* Grey border */
+    border-radius: 50%;
+    margin-right: 10px; /* Space after the circle (LTR) */
+    box-sizing: border-box;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+     background-color: transparent;
+     flex-shrink: 0; /* Prevent shrinking */
+}
+
+body.dark-mode .choices label::before {
+     border-color: #a0a0a0;
+}
+
+
+/* .choices input[type="radio"]:checked + span { */
+     /* Style for the text when radio is checked, if needed */
+/* } */
+
+/* Style for the custom radio button when checked (Adjusted for LTR) */
+.choices input[type="radio"]:checked + span::before {
+    content: ''; /* Ensure content exists */
+    background-color: var(--primary-color); /* Fill with primary color */
+    border-color: var(--primary-color); /* Change border color */
+    /* Add a small inner circle for checked state */
+    box-shadow: inset 0 0 0 6px var(--container-bg); /* Inner circle effect */
+}
+
+body.dark-mode .choices input[type="radio"]:checked + span::before {
+     box-shadow: inset 0 0 0 6px var(--container-bg); /* Use dark mode container bg */
+}
+
+
+/* Review Mode - Correct, Wrong, Selected */
+.choices label.correct {
+    background-color: var(--choice-correct-bg) !important;
+    color: var(--choice-correct-text) !important;
+    border-color: var(--choice-correct-border) !important;
+}
+
+.choices label.wrong {
+    background-color: var(--choice-wrong-bg) !important;
+    color: var(--choice-wrong-text) !important;
+    border-color: var(--choice-wrong-border) !important;
+}
+
+.choices label.selected {
+    background-color: var(--choice-selected-bg) !important;
+    border-color: var(--choice-selected-border) !important;
+    color: initial; /* Reset text color */
+}
+
+/* Style the custom radio button in review mode */
+.choices label.correct::before,
+.choices label.wrong::before,
+.choices label.selected::before {
+    border-color: transparent !important; /* Hide original border */
+    background-color: transparent !important; /* Hide original fill */
+    box-shadow: none !important; /* Remove original inner circle */
+}
+
+.choices label.correct::before {
+     content: '✓'; /* Checkmark */
+     font-size: 1.2rem;
+     color: var(--choice-correct-text);
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     width: 20px; /* Match size */
+     height: 20px; /* Match size */
+     border: 2px solid var(--choice-correct-border) !important;
+     border-radius: 50%;
+     font-weight: bold;
+     margin-right: 10px; /* Ensure correct spacing in LTR */
+     margin-left: 0 !important; /* Override default */
+}
+
+.choices label.wrong::before {
+     content: '✗'; /* Cross mark */
+     font-size: 1.2rem;
+     color: var(--choice-wrong-text);
+     display: flex;
+     align-items: center;
+     justify-content: center;
+      width: 20px; /* Match size */
+     height: 20px; /* Match size */
+     border: 2px solid var(--choice-wrong-border) !important;
+     border-radius: 50%;
+     font-weight: bold;
+     margin-right: 10px; /* Ensure correct spacing in LTR */
+      margin-left: 0 !important; /* Override default */
+}
+
+.choices label.selected::before {
+     /* Keep the default circle style for selected but not correct/wrong in review */
+     border-color: var(--choice-selected-border) !important;
+     background-color: var(--choice-selected-bg) !important;
+      box-shadow: inset 0 0 0 6px var(--container-bg) !important;
+       margin-right: 10px; /* Ensure correct spacing in LTR */
+        margin-left: 0 !important; /* Override default */
+}
+
+
+/* Explanation Styling (RTL specific) */
+.explanation {
+    margin-top: 1rem;
+    font-size: 1rem;
+    color: var(--explanation-color);
+    background: var(--explanation-bg);
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid var(--explanation-border);
+    line-height: 1.6;
+    direction: rtl; /* Set direction to RTL specifically for explanation */
+    text-align: right; /* Align text to the right specifically for explanation */
+}
+
+.explanation strong {
+    color: var(--body-color); /* Stronger color for titles */
+}
+
+
+/* Result Popup Styling */
+.result-popup {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.6); /* Darker overlay */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    backdrop-filter: blur(5px); /* Blur background */
+}
+.result-box {
+    background: var(--container-bg);
+    padding: 2.5rem 3rem; /* More padding */
+    border-radius: 16px;
+    box-shadow: var(--box-shadow); /* Use main box shadow */
+    text-align: center;
+    min-width: 350px; /* Wider popup */
+    border: 1px solid var(--border-color);
+}
+.progress-ring {
+    width: 100px; /* Larger ring */
+    height: 100px;
+    margin: 0 auto 1.5rem auto; /* More space below ring */
+    display: block;
+}
+.result-score {
+    font-size: 1.6rem; /* Larger score text */
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--body-color);
+}
+.result-box > div:nth-child(3) { /* Percentage text */
+     font-size: 1.1rem;
+     color: var(--text-muted);
+}
+.result-box > div:nth-child(3) b {
+     color: var(--body-color);
+}
+
+.result-actions {
+    margin-top: 2rem; /* More space above buttons */
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+.result-actions button {
+    padding: 0.7rem 1.5rem; /* Larger buttons */
+    font-size: 1.1rem;
+    border-radius: 8px;
+    border: none;
+    background: var(--button-bg);
+    color: var(--button-color);
+    cursor: pointer;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+     box-shadow: var(--button-shadow); /* Use button shadow */
+}
+.result-actions button:hover {
+    background: var(--button-hover-bg);
+     box-shadow: var(--button-hover-shadow); /* Use button hover shadow */
+}
+
+#close-btn {
+     background: var(--secondary-color); /* Grey button for close */
+     box-shadow: var(--secondary-button-shadow);
+}
+#close-btn:hover {
+     /* Darken grey on hover */
+     background-color: hsl(var(--secondary-color-h), var(--secondary-color-s), calc(var(--secondary-color-l) - 10%)); /* Attempt to darken */
+      box-shadow: var(--secondary-button-hover-shadow);
+}
+
+/* --- Helper to darken secondary color for hover if needed --- */
+/* This requires calculating HSL components if using hex, or using HSL directly for variables */
+/* For simplicity with current hex, I'll use a slightly darker hardcoded color or just rely on the shadow change */
+/* Using a fixed darker color for hover for now */
+body:not(.dark-mode) #close-btn:hover {
+    background-color: #5a6268; /* Darker grey */
+}
+body.dark-mode #close-btn:hover {
+     background-color: #545b62; /* Darker grey for dark mode */
+}
+
+
+/* Responsive Adjustments (Adjusted for LTR) */
+@media (max-width: 600px) {
+    .container {
+        padding: 15px;
+        margin: 20px auto;
+    }
+    .quiz-header {
+        padding: 1rem 15px;
+    }
+    .result-box {
+        padding: 1.5rem;
+        min-width: unset; /* Allow smaller width on small screens */
+        width: 90%;
+    }
+     .quiz-item {
+        flex-direction: column;
+        align-items: flex-start; /* Align items to the left in LTR column */
+        gap: 1rem;
+        padding: 1rem;
+    }
+    .quiz-item div {
+        width: 100%;
+        margin-right: 0; /* No margin-right in column layout */
+        margin-bottom: 0.5rem;
+    }
+    .quiz-item button {
+        width: 100%;
+        text-align: center;
+        padding: 0.8rem;
+    }
+     .header-left {
+         gap: 0.5rem;
+     }
+    .end-quiz-btn, .quiz-header .back-link {
+        padding: 0.5rem 1rem;
+         font-size: 0.9em;
+    }
+}

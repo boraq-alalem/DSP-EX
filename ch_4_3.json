@@ -1,0 +1,505 @@
+{
+  "title": "تحويل Z وخصائص DFT",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "question": "Which mathematical tool is primarily used to convert discrete-time signals to the complex frequency domain in DSP?",
+      "options": [
+        "A) Laplace Transform",
+        "B) Fourier Transform",
+        "C) Z-Transform",
+        "D) Discrete-Time Fourier Transform"
+      ],
+      "correctAnswer": "C",
+      "explanation": "حسب الصفحة الثانية من المحاضرة الثالثة، تحويل Z هو الأداة الرئيسية المستخدمة لتحويل الإشارات المتقطعة زمنياً إلى نطاق التردد المركب في معالجة الإشارات الرقمية."
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "question": "The Region of Convergence (ROC) of the Z-transform is essential because it:",
+      "options": [
+        "A) Determines the amplitude of the signal.",
+        "B) Helps in solving differential equations.",
+        "C) Defines the range of z values for which the transform converges.",
+        "D) Indicates the power of the signal."
+      ],
+      "correctAnswer": "C",
+      "explanation": "حسب الصفحة العاشرة من المحاضرة الثالثة، منطقة التقارب (ROC) هي مجموعة قيم z التي يتقارب عندها مجموع تعريف تحويل Z، وهي ضرورية لوجود التحويل."
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "question": "For a causal system to be stable, its ROC must:",
+      "options": [
+        "A) Be inside the innermost pole.",
+        "B) Include the unit circle.",
+        "C) Exclude the unit circle.",
+        "D) Be an annulus."
+      ],
+      "correctAnswer": "B",
+      "explanation": "حسب الصفحة العاشرة والحادية عشرة من المحاضرة الثالثة، شرط استقرار أي نظام هو أن تشمل ROC دائرة الوحدة."
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "question": "A left-sided sequence is also known as:",
+      "options": [
+        "A) Causal sequence.",
+        "B) Anti-causal sequence.",
+        "C) Finite-length sequence.",
+        "D) Periodic sequence."
+      ],
+      "correctAnswer": "B",
+      "explanation": "حسب الصفحة الحادية عشرة من المحاضرة الثالثة، المتتابعات يسرى الجانب تُعرف أيضاً بالإشارات غير السببية."
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "question": "The Z-transform simplifies which time-domain operation into multiplication in the z-domain?",
+      "options": [
+        "A) Addition.",
+        "B) Subtraction.",
+        "C) Convolution.",
+        "D) Correlation."
+      ],
+      "correctAnswer": "C",
+      "explanation": "حسب الصفحة الثانية من المحاضرة الثالثة، تحويل Z يبسط عملية الالتفاف (Convolution) إلى عملية ضرب."
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "question": "The mathematical definition of the Z-transform for a causal signal x[n] is:",
+      "options": [
+        "A) Summation from -∞ to ∞",
+        "B) Summation from 0 to ∞",
+        "C) Summation from -∞ to 0",
+        "D) Summation from -N to N"
+      ],
+      "correctAnswer": "B",
+      "explanation": "للإشارة السببية، يبدأ مجموع تعريف تحويل Z من n=0."
+    },
+    {
+      "id": "q7",
+      "type": "mcq",
+      "question": "If the ROC of a Z-transform is an annulus (a ring shape), the corresponding signal is likely a:",
+      "options": [
+        "A) Right-sided sequence.",
+        "B) Left-sided sequence.",
+        "C) Two-sided sequence.",
+        "D) Finite-length sequence."
+      ],
+      "correctAnswer": "C",
+      "explanation": "المتتابعات ثنائية الجانب لديها ROC تكون عادة حلقة بين قطبين."
+    },
+    {
+      "id": "q8",
+      "type": "mcq",
+      "question": "The Z-transform of δ[n−k] is:",
+      "options": [
+        "A) 1",
+        "B) Zk",
+        "C) Z-k",
+        "D) k"
+      ],
+      "correctAnswer": "C",
+      "explanation": "تحويل Z لـ δ[n−k] هو z−k."
+    },
+    {
+      "id": "q9",
+      "type": "mcq",
+      "question": "Stability analysis using the Z-transform involves examining the ROC relative to:",
+      "options": [
+        "A) The poles of the transform.",
+        "B) The zeros of the transform.",
+        "C) The unit circle.",
+        "D) The real axis."
+      ],
+      "correctAnswer": "C",
+      "explanation": "تحليل الاستقرار يعتمد على موقع ROC بالنسبة لدائرة الوحدة."
+    },
+    {
+      "id": "q10",
+      "type": "mcq",
+      "question": "A system is causal if its ROC:",
+      "options": [
+        "A) Is inside the innermost pole.",
+        "B) Includes the origin.",
+        "C) Is outside the outermost pole and extends to infinity.",
+        "D) Is bounded."
+      ],
+      "correctAnswer": "C",
+      "explanation": "النظام سببي إذا كانت ROC خارج أبعد قطب وتمتد إلى ما لا نهاية."
+    },
+    {
+      "id": "q11",
+      "type": "mcq",
+      "question": "Which type of Fourier transform is specifically designed for digital systems with sampled and finite-length data?",
+      "options": [
+        "A) Fourier Transform (FT)",
+        "B) Discrete-Time Fourier Transform (DTFT)",
+        "C) Discrete Fourier Transform (DFT)",
+        "D) Fast Fourier Transform (FFT)"
+      ],
+      "correctAnswer": "C",
+      "explanation": "DFT يُستخدم مع إشارات رقمية ذات طول محدود."
+    },
+    {
+      "id": "q12",
+      "type": "mcq",
+      "question": "The primary benefit of the Fast Fourier Transform (FFT) over a direct DFT calculation is:",
+      "options": [
+        "A) It can handle continuous-time signals.",
+        "B) It provides better frequency resolution.",
+        "C) It is computationally much faster.",
+        "D) It simplifies the convolution operation."
+      ],
+      "correctAnswer": "C",
+      "explanation": "FFT أسرع كثيراً من DFT المباشر."
+    },
+    {
+      "id": "q13",
+      "type": "mcq",
+      "question": "The Inverse DFT (IDFT) is used to:",
+      "options": [
+        "A) Convert a time-domain signal to the frequency domain.",
+        "B) Reconstruct the original time-domain signal from its DFT.",
+        "C) Calculate the ROC of the DFT.",
+        "D) Simplify solving difference equations."
+      ],
+      "correctAnswer": "B",
+      "explanation": "IDFT يُستخدم لاستعادة الإشارة الأصلية من DFT."
+    },
+    {
+      "id": "q14",
+      "type": "mcq",
+      "question": "In the DFT formula X[k], k represents:",
+      "options": [
+        "A) Time index",
+        "B) Sample number",
+        "C) Frequency index",
+        "D) Amplitude"
+      ],
+      "correctAnswer": "C",
+      "explanation": "k هو مؤشر التردد."
+    },
+    {
+      "id": "q15",
+      "type": "mcq",
+      "question": "The property of DFT that states X[k+N]=X[k] is known as:",
+      "options": [
+        "A) Linearity.",
+        "B) Time Shifting.",
+        "C) Periodicity.",
+        "D) Frequency Shifting."
+      ],
+      "correctAnswer": "C",
+      "explanation": "خاصية الدورية."
+    },
+    {
+      "id": "q16",
+      "type": "mcq",
+      "question": "Applying a time shift to a signal in the time domain results in what change in its DFT?",
+      "options": [
+        "A) Amplitude scaling.",
+        "B) Frequency shift.",
+        "C) Phase shift.",
+        "D) Time reversal."
+      ],
+      "correctAnswer": "C",
+      "explanation": "الإزاحة الزمنية تؤدي إلى تغيير في الطور."
+    },
+    {
+      "id": "q17",
+      "type": "mcq",
+      "question": "In Image Processing, what is typically applied to analyze the frequency content of an image?",
+      "options": [
+        "A) 1D DFT.",
+        "B) 2D DFT.",
+        "C) Z-Transform.",
+        "D) Laplace Transform."
+      ],
+      "correctAnswer": "B",
+      "explanation": "الصور تُحلل باستخدام 2D DFT."
+    },
+    {
+      "id": "q18",
+      "type": "mcq",
+      "question": "OFDM (Orthogonal Frequency Division Multiplexing), used in modern wireless communication systems, heavily relies on:",
+      "options": [
+        "A) Z-Transform.",
+        "B) Laplace Transform.",
+        "C) DFT and IFFT.",
+        "D) Only Time-domain analysis."
+      ],
+      "correctAnswer": "C",
+      "explanation": "تعتمد OFDM على DFT و IFFT."
+    },
+    {
+      "id": "q19",
+      "type": "mcq",
+      "question": "In medical applications like EEG analysis, FFT is used to:",
+      "options": [
+        "A) Increase the signal amplitude.",
+        "B) Convert continuous signals to discrete.",
+        "C) Extract specific frequency bands.",
+        "D) Add noise to the signal for testing."
+      ],
+      "correctAnswer": "C",
+      "explanation": "FFT يُستخدم لاستخلاص نطاقات ترددية محددة."
+    },
+    {
+      "id": "q20",
+      "type": "mcq",
+      "question": "The computational complexity of a direct DFT calculation for a signal of length N is approximately:",
+      "options": [
+        "A) O(N log N).",
+        "B) O(N).",
+        "C) O(N²).",
+        "D) O(log N)."
+      ],
+      "correctAnswer": "C",
+      "explanation": "DFT المباشر يتطلب O(N²)."
+    },
+    {
+      "id": "q21",
+      "type": "mcq",
+      "question": "The ROC for a finite-length sequence:",
+      "options": [
+        "A) Is always a single circle.",
+        "B) Is an annulus.",
+        "C) Is the entire z-plane except possibly z=0 or z=∞.",
+        "D) Always includes only the unit circle."
+      ],
+      "correctAnswer": "C",
+      "explanation": "ROC للإشارات ذات الطول المحدود يشمل كامل المستوى z باستثناء نقاط معينة."
+    },
+    {
+      "id": "q22",
+      "type": "mcq",
+      "question": "If a system's impulse response h[n] has an ROC that includes the unit circle, the system is:",
+      "options": [
+        "A) Causal.",
+        "B) Anti-causal.",
+        "C) Stable.",
+        "D) Not uniquely defined."
+      ],
+      "correctAnswer": "C",
+      "explanation": "شمول ROC لدائرة الوحدة يدل على الاستقرار."
+    },
+    {
+      "id": "q23",
+      "type": "mcq",
+      "question": "For a right-sided sequence with a pole at z=a, its ROC is:",
+      "options": [
+        "A) |z| < |a|",
+        "B) |z| > |a|",
+        "C) 0 < |z| < |a|",
+        "D) |z| = |a|"
+      ],
+      "correctAnswer": "B",
+      "explanation": "ROC تقع خارج دائرة نصف قطرها |a|."
+    },
+    {
+      "id": "q24",
+      "type": "mcq",
+      "question": "Which transform converts continuous-time signals to continuous frequency?",
+      "options": [
+        "A) Z-Transform",
+        "B) Discrete-Time Fourier Transform (DTFT)",
+        "C) Fourier Transform (FT)",
+        "D) Discrete Fourier Transform (DFT)"
+      ],
+      "correctAnswer": "C",
+      "explanation": "تحويل فورييه FT يُستخدم للإشارات المستمرة."
+    },
+    {
+      "id": "q25",
+      "type": "mcq",
+      "question": "One of the applications of DFT/FFT in audio processing is:",
+      "options": [
+        "A) Converting analog audio to digital",
+        "B) Reducing the sampling rate",
+        "C) Displaying the spectrum analyzer",
+        "D) Increasing the time duration of the signal"
+      ],
+      "correctAnswer": "C",
+      "explanation": "يستخدم DFT/FFT لعرض محلل الطيف."
+    },
+    {
+      "id": "tf1",
+      "type": "tf",
+      "question": "The Z-transform is defined using an integral.",
+      "correctAnswer": "False",
+      "explanation": "Z-transform يُعرف باستخدام مجموع وليس تكامل."
+    },
+    {
+      "id": "tf2",
+      "type": "tf",
+      "question": "For a system to be causal, its ROC must include the unit circle.",
+      "correctAnswer": "False",
+      "explanation": "شمول ROC لدائرة الوحدة يخص الاستقرار، لا السببية."
+    },
+    {
+      "id": "tf3",
+      "type": "tf",
+      "question": "The DFT is applicable to continuous-time, infinite-length signals.",
+      "correctAnswer": "False",
+      "explanation": "DFT مخصص للإشارات المتقطعة والمحدودة الطول."
+    },
+    {
+      "id": "tf4",
+      "type": "tf",
+      "question": "The Inverse DFT (IDFT) formula includes a factor of 1/N.",
+      "correctAnswer": "True",
+      "explanation": "صيغة IDFT تحتوي على العامل 1/N."
+    },
+    {
+      "id": "tf5",
+      "type": "tf",
+      "question": "The Time-Shift property of the Z-transform states that a time shift in x[n] corresponds to a phase shift in X(z).",
+      "correctAnswer": "True",
+      "explanation": "الإزاحة الزمنية تؤدي إلى تغيّر في الطور."
+    },
+    {
+      "id": "tf6",
+      "type": "tf",
+      "question": "For a finite-length signal, its Z-transform ROC is always bounded.",
+      "correctAnswer": "False",
+      "explanation": "ROC قد يشمل كامل المستوى z (ما عدا 0 أو ∞)."
+    },
+    {
+      "id": "tf7",
+      "type": "tf",
+      "question": "The computational complexity of FFT is higher than a direct DFT calculation for large N.",
+      "correctAnswer": "False",
+      "explanation": "FFT أكثر كفاءة من DFT المباشر."
+    },
+    {
+      "id": "tf8",
+      "type": "tf",
+      "question": "JPEG image compression uses the DFT directly.",
+      "correctAnswer": "False",
+      "explanation": "JPEG يستخدم DCT وليس DFT."
+    },
+    {
+      "id": "tf9",
+      "type": "tf",
+      "question": "The ROC of a Z-transform uniquely determines the corresponding signal.",
+      "correctAnswer": "False",
+      "explanation": "يجب تحديد ROC مع Z-transform لتحديد الإشارة بشكل فريد."
+    },
+    {
+      "id": "tf10",
+      "type": "tf",
+      "question": "A system is unstable if its ROC includes the unit circle.",
+      "correctAnswer": "False",
+      "explanation": "شمول ROC لدائرة الوحدة يعني استقرار."
+    },
+    {
+      "id": "tf11",
+      "type": "tf",
+      "question": "The Laplace transform is used for analog filter design.",
+      "correctAnswer": "True",
+      "explanation": "تحويل لابلاس يُستخدم لتصميم المرشحات التناظرية."
+    },
+    {
+      "id": "tf12",
+      "type": "tf",
+      "question": "The DFT provides insight into the spectral content of signals.",
+      "correctAnswer": "True",
+      "explanation": "DFT تحلل محتوى التردد في الإشارة."
+    },
+    {
+      "id": "tf13",
+      "type": "tf",
+      "question": "For a right-sided sequence, the ROC is always inside the innermost pole.",
+      "correctAnswer": "False",
+      "explanation": "ROC تكون خارج أبعد قطب."
+    },
+    {
+      "id": "tf14",
+      "type": "tf",
+      "question": "The Linearity property applies to both Z-transform and DFT.",
+      "correctAnswer": "True",
+      "explanation": "خاصية الخطية تنطبق على كلا التحويلين."
+    },
+    {
+      "id": "tf15",
+      "type": "tf",
+      "question": "In the DFT formula, N represents the frequency index.",
+      "correctAnswer": "False",
+      "explanation": "N هو طول الإشارة، وليس مؤشر التردد."
+    },
+    {
+      "id": "tf16",
+      "type": "tf",
+      "question": "OFDM technology in wireless communication relies on Time-domain analysis only.",
+      "correctAnswer": "False",
+      "explanation": "OFDM تعتمد على DFT و IFFT."
+    },
+    {
+      "id": "tf17",
+      "type": "tf",
+      "question": "A system's impulse response being absolutely summable is a condition for its stability.",
+      "correctAnswer": "True",
+      "explanation": "الاستجابة المطلقة القابلة للتجميع تعني الاستقرار."
+    },
+    {
+      "id": "tf18",
+      "type": "tf",
+      "question": "For a left-sided sequence anu[−n−1] with ∣a∣<1, the system is stable.",
+      "correctAnswer": "False",
+      "explanation": "ROC في هذه الحالة لا تشمل دائرة الوحدة، لذا النظام غير مستقر."
+    },
+    {
+      "id": "tf19",
+      "type": "tf",
+      "question": "The ROC for a two-sided sequence is always bounded.",
+      "correctAnswer": "True",
+      "explanation": "حسب الصفحة الحادية عشرة من المحاضرة الثالثة، ROC للمتتابعة ثنائية الجانب تكون حلقة R1<∣z∣<R2، وهي منطقة محددة (bounded)."
+    },
+    {
+      "id": "tf20",
+      "type": "tf",
+      "question": "The definition of the DFT involves a summation from n=0 to N−1.",
+      "correctAnswer": "True",
+      "explanation": "حسب الصفحة الثالثة من المحاضرة الرابعة، صيغة DFT تحتوي على مجموع يمتد من n=0 إلى N−1 ، حيث N هو طول الإشارة."
+    },
+    {
+      "id": "tf21",
+      "type": "tf",
+      "question": "A system is causal if its impulse response h[n] is zero for n<0.",
+      "correctAnswer": "True",
+      "explanation": "هذا هو تعريف النظام السببي في النطاق الزمني. النظام السببي يعتمد على القيم الحالية والسابقة للمدخلات، مما يعني أن استجابة النبضة تكون صفرًا قبل لحظة تطبيق النبضة (n=0)."
+    },
+    {
+      "id": "tf22",
+      "type": "tf",
+      "question": "The DFT of a real-valued signal exhibits symmetry.",
+      "correctAnswer": "True",
+      "explanation": "تم ذكر هذا في الصفحة السابعة من المحاضرة الرابعة كملاحظة بعد حساب المثال الأول، حيث أن DFT لإشارة حقيقية لها خاصية تناظر معينة: X[k]=X∗[N−k]."
+    },
+    {
+      "id": "tf23",
+      "type": "tf",
+      "question": "The Z-transform is always unique for a given signal.",
+      "correctAnswer": "False",
+      "explanation": "حسب الصفحة العاشرة من المحاضرة الثالثة، تحويل Z يكون فريداً فقط إذا تم تحديد منطقة التقارب (ROC). نفس الصيغة الجبرية لتحويل Z قد تتوافق مع ROCs مختلفة وبالتالي تمثل إشارات زمنية مختلفة."
+    },
+    {
+      "id": "tf24",
+      "type": "tf",
+      "question": "FFT is a type of Fourier transform used for continuous-time signals.",
+      "correctAnswer": "False",
+      "explanation": "حسب الصفحة الرابعة من المحاضرة الرابعة، FFT هي خوارزمية لحساب DFT، والذي يُستخدم للإشارات المتقطعة وذات الطول المحدود."
+    },
+    {
+      "id": "tf25",
+      "type": "tf",
+      "question": "Analyzing signals in the frequency domain can simplify understanding properties like filtering and spectral analysis.",
+      "correctAnswer": "True",
+      "explanation": "حسب الصفحة الثانية من المحاضرة الرابعة، يُعد نطاق التردد مهماً في DSP لأن العديد من خصائص وعمليات الإشارة تكون أسهل في الفهم والتنفيذ في هذا النطاق."
+    }
+  ]
+}

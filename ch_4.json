@@ -1,0 +1,426 @@
+{
+"title": "مراجعة شاملة DSP",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "question": "Fourier analysis is a mathematical technique used to analyze signals in which domain?",
+      "options": [
+        "A) Time domain.",
+        "B) Spatial domain.",
+        "C) Frequency domain.",
+        "D) Amplitude domain."
+      ],
+      "correctAnswer": "C) Frequency domain.",
+      "explanation": "حسب الصفحة الثانية من المحاضرة الرابعة، تحليل فورييه هو تقنية رياضية تُستخدم لتحليل الإشارات في نطاق التردد."
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "question": "In Digital Signal Processing (DSP), Fourier analysis is considered essential because:",
+      "options": [
+        "A) It is the only method to represent discrete-time signals.",
+        "B) Many signal properties and operations are easier in the frequency domain.",
+        "C) It converts analog signals to digital signals.",
+        "D) It eliminates the need for sampling."
+      ],
+      "correctAnswer": "B) Many signal properties and operations are easier in the frequency domain.",
+      "explanation": "حسب الصفحة الثانية، تحليل فورييه ضروري في DSP لأن العديد من خصائص الإشارة وعملياتها (مثل الفلترة وتحليل الطيف) تكون أسهل في الفهم والتنفيذ في نطاق التردد."
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "question": "Which type of Fourier transform is used in Digital Signal Processing (DSP) for signals that are both discrete-time and finite-length?",
+      "options": [
+        "A) Fourier Transform (FT).",
+        "B) Discrete-Time Fourier Transform (DTFT).",
+        "C) Discrete Fourier Transform (DFT).",
+        "D) Fast Fourier Transform (FFT)."
+      ],
+      "correctAnswer": "C) Discrete Fourier Transform (DFT).",
+      "explanation": "حسب الصفحة الثانية، تحويل فورييه المتقطع (DFT) هو المُصمم خصيصاً للأنظمة الرقمية التي تتعامل مع بيانات مُعينة وذات طول محدود."
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "question": "The Inverse Discrete Fourier Transform (IDFT) is used to:",
+      "options": [
+        "A) Calculate the frequency components of a signal.",
+        "B) Transform a continuous-time signal to the frequency domain.",
+        "C) Reconstruct the time-domain signal from its DFT.",
+        "D) Analyze the stability of a system."
+      ],
+      "correctAnswer": "C) Reconstruct the time-domain signal from its DFT.",
+      "explanation": "حسب الصفحة الثالثة، تحويل فورييه المتقطع العكسي (IDFT) يقوم بالعملية المعاكسة لـ DFT؛ أي أنه يُستخدم لإعادة بناء الإشارة الأصلية في النطاق الزمني من قيمها في نطاق التردد (DFT)."
+    },
+    {
+      "id": "q7",
+      "type": "mcq",
+      "question": "The Periodicity property of the DFT states that:",
+      "options": [
+        "A) x[n] is periodic with period N, but X[k]is not.",
+        "B) X[k]is periodic with period N, but x[n] is not.",
+        "C) Both x[n] and X[k] are periodic with period N",
+        "D) Neither x[n] nor X[k] are periodic with period N."
+      ],
+      "correctAnswer": "C) Both x[n] and X[k] are periodic with period N",
+      "explanation": "حسب الصفحة الثالثة، كل من الإشارة في النطاق الزمني x[n] وتمثيلها في نطاق التردد X[k] يكونان دوريين مع دورة تساوي طول الإشارة N."
+    },
+    {
+      "id": "q8",
+      "type": "mcq",
+      "question": "Time shifting a signal in the time domain by n0 samples affects its DFT by:",
+      "options": [
+        "A) Scaling its magnitude.",
+        "B) Shifting its frequency index.",
+        "C) Applying a phase shift.",
+        "D) Reversing the order of frequency components."
+      ],
+      "correctAnswer": "C) Applying a phase shift.",
+      "explanation": "حسب الصفحة الثالثة (خاصية الإزاحة الزمنية)، إزاحة الإشارة في النطاق الزمني بمقدار n0 تؤدي إلى ضرب تحويل DFT بعامل e−j2πkn0/N، وهذا العامل يسبب تغيراً في الطور (phase shift) في نطاق التردد."
+    },
+    {
+      "id": "q9",
+      "type": "mcq",
+      "question": "The Fast Fourier Transform (FFT) is best described as:",
+      "options": [
+        "A) A different transform than DFT.",
+        "B) A slower but more accurate method to compute DFT.",
+        "C) An efficient algorithm to compute the DFT.",
+        "D) A method to convert continuous-time signals to frequency domain."
+      ],
+      "correctAnswer": "C) An efficient algorithm to compute the DFT.",
+      "explanation": "حسب الصفحة الرابعة، FFT هو خوارزمية سريعة وفعالة لحساب تحويل فورييه المتقطع (DFT)، وليس تحويلاً مختلفاً أو أبطأ."
+    },
+    {
+      "id": "q10",
+      "type": "mcq",
+      "question": "The main reason FFT is important in practice for large signals is its reduced:",
+      "options": [
+        "A) Memory usage.",
+        "B) Computational complexity.",
+        "C) Need for sampling.",
+        "D) Frequency resolution."
+      ],
+      "correctAnswer": "B) Computational complexity.",
+      "explanation": "حسب الصفحة الرابعة، الأهمية الكبرى لـ FFT تكمن في تقليل التعقيد الحسابي بشكل كبير مقارنةً بالـ DFT المباشر، مما يجعلها أسرع بكثير للإشارات الكبيرة."
+    },
+    {
+      "id": "q11",
+      "type": "mcq",
+      "question": "The computational complexity of the FFT algorithm for a signal of length N is approximately:",
+      "options": [
+        "A) O(N^2).",
+        "B) O(N).",
+        "C) O(N log N)",
+        "D) O(log N)"
+      ],
+      "correctAnswer": "C) O(N log N)",
+      "explanation": "حسب الصفحة الرابعة، التعقيد الحسابي لخوارزمية FFT هو O(N log N)."
+    },
+    {
+      "id": "q12",
+      "type": "mcq",
+      "question": "Which of the following is NOT listed as a practical application of DFT and FFT in the document?",
+      "options": [
+        "A) Audio Signal Processing.",
+        "B) Weather Forecasting.",
+        "C) Image Processing.",
+        "D) Wireless Communication."
+      ],
+      "correctAnswer": "B) Weather Forecasting.",
+      "explanation": "الصفحات 5 و 6 تذكر تطبيقات في معالجة الصوت، الكلام، الصور، الاتصالات اللاسلكية، والتطبيقات الطبية. لا تذكر التنبؤ بالطقس كتطبيق مباشر لـ DFT/FFT في هذا السياق."
+    },
+    {
+      "id": "q13",
+      "type": "mcq",
+      "question": "In Audio Signal Processing, DFT/FFT are used for tasks like:",
+      "options": [
+        "A) Increasing the sampling rate.",
+        "B) Isolating or enhancing specific frequency bands.",
+        "C) Converting digital signals to analog.",
+        "D) Adding reverberation effects randomly."
+      ],
+      "correctAnswer": "B) Isolating or enhancing specific frequency bands.",
+      "explanation": "حسب الصفحة الخامسة، في معالجة الإشارات الصوتية، يتم تحويل الإشارات إلى نطاق التردد باستخدام DFT/FFT لعزل أو تعزيز نطاقات ترددية محددة، مما يساعد في تقليل الضوضاء أو تطبيق المعادلات الصوتية."
+    },
+    {
+      "id": "q14",
+      "type": "mcq",
+      "question": "Mel-frequency cepstral coefficients (MFCCs), used in speech processing, are derived using:",
+      "options": [
+        "A) Z-Transform properties.",
+        "B) DFT or FFT.",
+        "C) Laplace Transform.",
+        "D) Only time-domain analysis."
+      ],
+      "correctAnswer": "B) DFT or FFT.",
+      "explanation": "حسب الصفحة الخامسة، MFCCs التي تُستخدم في تحليل الكلام تُشتق باستخدام تحويل فورييه السريع (FFT)."
+    },
+    {
+      "id": "q15",
+      "type": "mcq",
+      "question": "In Image Processing, the 2D FFT is used to analyze:",
+      "options": [
+        "A) The color depth of the image.",
+        "B) The spatial resolution of the image.",
+        "C) The frequency content of the image (e.g., edges vs smooth areas).",
+        "D) The file size of the image."
+      ],
+      "correctAnswer": "C) The frequency content of the image (e.g., edges vs smooth areas).",
+      "explanation": "حسب الصفحة الخامسة، يتم تطبيق 2D FFT على بيانات الصور لتحليل محتواها الترددي، حيث ترتبط الترددات العالية بالحواف والتفاصيل والترددات المنخفضة بالمناطق الناعمة."
+    },
+    {
+      "id": "q16",
+      "type": "mcq",
+      "question": "OFDM technology relies heavily on:",
+      "options": [
+        "A) Z-Transform.",
+        "B) Convolution in the time domain.",
+        "C) DFT and IFFT.",
+        "D) Only modulation in the time domain."
+      ],
+      "correctAnswer": "C) DFT and IFFT.",
+      "explanation": "حسب الصفحة السادسة، تقنية OFDM في الاتصالات اللاسلكية تعتمد بشكل كبير على تحويلي DFT و IFFT لعمليات التضمين وإزالة التضمين عبر قنوات ترددية متعددة بشكل متعامد."
+    },
+    {
+      "id": "q17",
+      "type": "mcq",
+      "question": "In medical applications like EEG and ECG analysis, FFT helps in:",
+      "options": [
+        "A) Increasing the signal-to-noise ratio directly.",
+        "B) Converting the signals into audible sound.",
+        "C) Detecting abnormalities by analyzing frequency patterns.",
+        "D) Reducing the amount of data collected."
+      ],
+      "correctAnswer": "C) Detecting abnormalities by analyzing frequency patterns.",
+      "explanation": "حسب الصفحة السادسة، في تحليل الإشارات البيولوجية مثل EEG و ECG، يُستخدم FFT لتحليل محتواها الترددي والكشف عن أنماط أو ترددات غير طبيعية قد تشير إلى مشاكل صحية."
+    },
+    {
+      "id": "q18",
+      "type": "mcq",
+      "question": "The complex exponential term e−j2πkn/N in the DFT formula is often referred to as:",
+      "options": [
+        "A) An amplitude term.",
+        "B) A scaling factor.",
+        "C) A basis function (complex sinusoid).",
+        "D) The time-shifting factor."
+      ],
+      "correctAnswer": "C) A basis function (complex sinusoid).",
+      "explanation": "حسب الصفحة الثالثة، الحد e(e−j2πkn/N ) هو الدالة الأساسية (basis function) في صيغة DFT، وهو يمثل جيبياً مركباً بتردد معين."
+    },
+    {
+      "id": "q19",
+      "type": "mcq",
+      "question": "What does X[k] represent in the DFT formula?",
+      "options": [
+        "A) The value of the signal at time index k.",
+        "B) The strength (amplitude and phase) of the kth frequency component.",
+        "C) The total energy of the signal.",
+        "D) The sampling rate."
+      ],
+      "correctAnswer": "B) The strength (amplitude and phase) of the kth frequency component.",
+      "explanation": "حسب الصفحة الثالثة، X[k] هو قيمة تمثيل الإشارة في نطاق التردد عند المؤشر k. هذه القيمة المركبة تمثل قوة (سعة وطور) المكون الترددي المرتبط بالتردد الذي يمثله المؤشر k."
+    },
+    {
+      "id": "q21",
+      "type": "mcq",
+      "question": "The primary reason for using the frequency domain view in DSP is that:",
+      "options": [
+        "A) All signals are simpler in the frequency domain.",
+        "B) Time-domain analysis is computationally impossible.",
+        "C) Many signal properties and operations are more intuitive and easier to handle.",
+        "D) It removes all noise from the signal automatically."
+      ],
+      "correctAnswer": "C) Many signal properties and operations are more intuitive and easier to handle.",
+      "explanation": "حسب الصفحة الثانية، نطاق التردد مهم في DSP لأن العديد من خصائص الإشارة (مثل محتوى التردد) وعملياتها (مثل الفلترة) تكون أسهل في الفهم والتنفيذ عند النظر إليها في هذا النطاق."
+    },
+    {
+      "id": "q22",
+      "type": "mcq",
+      "question": "Compared to the Discrete Fourier Transform (DFT), the Discrete-Time Fourier Transform (DTFT) is applied to:",
+      "options": [
+        "A) Continuous-time signals.",
+        "B) Discrete-time, infinite-length signals.",
+        "C) Discrete-time, finite-length signals.",
+        "D) Analog signals."
+      ],
+      "correctAnswer": "B) Discrete-time, infinite-length signals.",
+      "explanation": "حسب الصفحة الثانية، DTFT هو للإشارات المتقطعة زمنياً ولكنه يُعطي تمثيلاً في نطاق التردد المستمر. غالباً ما يُطبق على إشارات متقطعة زمنياً لا نهائية الطول في التحليل النظري، بينما DFT للإشارات ذات الطول المحدود."
+    },
+    {
+      "id": "q23",
+      "type": "mcq",
+      "question": "One of the applications where FFT is used in medical imaging is:",
+      "options": [
+        "A) X-ray image capturing.",
+        "B) MRI scans analysis.",
+        "C) Blood pressure measurement.",
+        "D) Temperature monitoring."
+      ],
+      "correctAnswer": "B) MRI scans analysis.",
+      "explanation": "حسب الصفحة السادسة، يُستخدم FFT في تحليل صور التصوير الطبي مثل صور الرنين المغناطيسي (MRI scans)."
+    },
+    {
+      "id": "tf1",
+      "type": "tf",
+      "question": "Fourier analysis allows us to express a time-domain signal as a sum of sinusoids.",
+      "correctAnswer": true,
+      "explanation": "حسب الصفحة الثانية، الفكرة الأساسية لتحليل فورييه هي تمثيل الإشارة في النطاق الزمني كمجموع من موجات جيبية بترددات مختلفة."
+    },
+    {
+      "id": "tf2",
+      "type": "tf",
+      "question": "In DSP, Fourier analysis is essential because many signal properties are harder to understand in the frequency domain.",
+      "correctAnswer": false,
+      "explanation": "حسب الصفحة الثانية، تحليل فورييه أساسي في DSP لأن العديد من خصائص الإشارة تكون أسهل في الفهم والتحليل في نطاق التردد."
+    },
+    {
+      "id": "tf3",
+      "type": "tf",
+      "question": "The Fourier Transform (FT) is used for discrete-time signals.",
+      "correctAnswer": false,
+      "explanation": "حسب الصفحة الثانية، تحويل فورييه (FT) هو للإشارات المستمرة زمنياً، بينما DFT و DTFT هما للإشارات المتقطعة."
+    },
+    {
+      "id": "tf4",
+      "type": "tf",
+      "question": "The DFT is applied to signals that are discrete in time and finite in length.",
+      "correctAnswer": true,
+      "explanation": "حسب الصفحة الثانية والثالثة، تحويل فورييه المتقطع (DFT) مصمم للإشارات المتقطعة زمنياً وذات الطول المحدود."
+    },
+    {
+      "id": "tf5",
+      "type": "tf",
+      "question": "The Inverse DFT (IDFT) converts a frequency-domain representation back to the time domain.",
+      "correctAnswer": true,
+      "explanation": "حسب الصفحة الثالثة، IDFT هو العملية العكسية لـ DFT، ويُستخدم لإعادة بناء الإشارة الأصلية في النطاق الزمني من تمثيلها في نطاق التردد."
+    },
+    {
+      "id": "tf6",
+      "type": "tf",
+      "question": "The Linearity property holds for the DFT.",
+      "correctAnswer": true,
+      "explanation": "حسب الصفحة الثالثة، خاصية الخطية هي إحدى خصائص DFT المذكورة."
+    },
+    {
+      "id": "tf7",
+      "type": "tf",
+      "question": "Both x[n] and X[k] are periodic with period N in the context of DFT.",
+      "correctAnswer": true,
+      "explanation": "حسب الصفحة الثالثة، خاصية الدورية لـ DFT تنص على أن كل من الإشارة في الزمن وتمثيلها في التردد دوريان مع دورة N."
+    },
+    {
+      "id": "tf8",
+      "type": "tf",
+      "question": "A time shift in the time domain results only in a change in the magnitude of the DFT.",
+      "correctAnswer": false,
+      "explanation": "حسب الصفحة الثالثة (خاصية الإزاحة الزمنية)، الإزاحة الزمنية تؤدي إلى تغيير في طور (Phase) مكونات التردد، وليس على السعة (Magnitude)."
+    },
+    {
+      "id": "tf9",
+      "type": "tf",
+      "question": "Multiplying a signal x[n] by ej2πk0n/N shifts its frequency spectrum.",
+      "correctAnswer": true,
+      "explanation": "حسب الصفحة الثالثة (خاصية الإزاحة الترددية)، هذا هو تأثير ضرب الإشارة بأس مركب جيبي."
+    },
+    {
+      "id": "tf10",
+      "type": "tf",
+      "question": "The DFT gives insight into the time-domain behavior of signals.",
+      "correctAnswer": false,
+      "explanation": "حسب الصفحة الثالثة، DFT يوفر رؤية لمحتوى الإشارة في نطاق التردد (Spectral content)."
+    },
+    {
+      "id": "tf11",
+      "type": "tf",
+      "question": "The Fast Fourier Transform (FFT) is a fundamental new type of Fourier transform.",
+      "correctAnswer": false,
+      "explanation": "حسب الصفحة الرابعة، FFT هو خوارزمية سريعة لحساب DFT، وليس نوعاً جديداً من التحويل."
+    },
+    {
+      "id": "tf12",
+      "type": "tf",
+      "question": "For large signals, calculating DFT directly is computationally more efficient than using FFT.",
+      "correctAnswer": false,
+      "explanation": "حسب الصفحة الرابعة، FFT أكثر كفاءة بكثير (أسرع) من حساب DFT المباشر للإشارات الكبيرة."
+    },
+    {
+      "id": "tf13",
+      "type": "tf",
+      "question": "The computational complexity of FFT is O(N^2).",
+      "correctAnswer": false,
+      "explanation": "حسب الصفحة الرابعة، التعقيد الحسابي لـ FFT هو O(N log N)."
+    },
+    {
+      "id": "tf14",
+      "type": "tf",
+      "question": "FFT is used in audio analysis for tasks like pitch detection.",
+      "correctAnswer": true,
+      "explanation": "حسب الصفحة الخامسة، تحليل الصوت هو أحد التطبيقات العملية لـ FFT، بما في ذلك كشف درجة الصوت."
+    },
+    {
+      "id": "tf15",
+      "type": "tf",
+      "question": "2D FFT is used in image processing, but it only shows the average brightness of the image.",
+      "correctAnswer": false,
+      "explanation": "حسب الصفحة الخامسة، 2D FFT في معالجة الصور يُستخدم لتحليل محتوى التردد (مثل الحواف والمناطق الناعمة)، وليس فقط متوسط السطوع."
+    },
+    {
+      "id": "tf16",
+      "type": "tf",
+      "question": "OFDM technology, used in 4G/5G communications, relies on Z-Transform.",
+      "correctAnswer": false,
+      "explanation": "حسب الصفحة السادسة، OFDM يعتمد على تحويلي DFT و IFFT، وليس Z-Transform بشكل مباشر."
+    },
+    {
+      "id": "tf17",
+      "type": "tf",
+      "question": "In medical applications, FFT can help in detecting abnormalities by analyzing frequency patterns in biological signals.",
+      "correctAnswer": true,
+      "explanation": "حسب الصفحة السادسة، يُستخدم FFT في تحليل الإشارات البيولوجية في الطب للكشف عن أنماط ترددية غير طبيعية قد تشير إلى حالات مرضية."
+    },
+    {
+      "id": "tf18",
+      "type": "tf",
+      "question": "The example in the document shows that the DFT of a delta signal (impulse) is a flat frequency spectrum.",
+      "correctAnswer": true,
+      "explanation": "المثال الرابع في الصفحة العاشرة يوضح أن DFT لدالة النبضة (Delta signal) هو ثابت (جميع مكونات التردد متساوية)، وهذا يعني طيف تردد مسطح."
+    },
+    {
+      "id": "tf21",
+      "type": "tf",
+      "question": "The IDFT formula includes a scaling factor of 1/N.",
+      "correctAnswer": true,
+      "explanation": "حسب الصفحة الثالثة، صيغة تحويل فورييه المتقطع العكسي (IDFT) تتضمن العامل 1/N خارج المجموع."
+    },
+    {
+      "id": "tf22",
+      "type": "tf",
+      "question": "DFT is mainly used in theoretical DSP and rarely in practical applications.",
+      "correctAnswer": false,
+      "explanation": "حسب الصفحات 5 و 6، DFT (و FFT الذي يحسبه بكفاءة) له تطبيقات عملية واسعة جداً في مجالات متعددة مثل الصوت، الصور، الاتصالات، والطب."
+    },
+    {
+      "id": "tf23",
+      "type": "tf",
+      "question": "Image compression techniques like JPEG use transforms related to Fourier analysis to eliminate insignificant frequency data.",
+      "correctAnswer": true,
+      "explanation": "حسب الصفحة الخامسة، تقنيات مثل JPEG تستخدم تحويلاً مرتبطاً (DCT) للتخلص من مكونات التردد غير المهمة لضغط الصورة."
+    },
+    {
+      "id": "tf24",
+      "type": "tf",
+      "question": "The main benefit of the frequency domain is that all signals are simpler and easier to analyze there than in the time domain.",
+      "correctAnswer": false,
+      "explanation": "ليست \"كل\" الإشارات بالضرورة أبسط، ولكن العديد من الإشارات المعقدة في الزمن تكشف عن أنماط بسيطة في التردد، والعديد من عمليات الإشارة أسهل في التنفيذ هناك. القول \"كل\" يجعل العبارة غير دقيقة."
+    },
+    {
+      "id": "tf25",
+      "type": "tf",
+      "question": "The Time Shifting property of DFT implies that shifting a signal in time only changes the magnitude of its DFT.",
+      "correctAnswer": false,
+      "explanation": "حسب الصفحة الثالثة، الإزاحة الزمنية تؤثر على طور (Phase) مكونات التردد، وليس على السعة (Magnitude)."
+    }
+  ]
+}

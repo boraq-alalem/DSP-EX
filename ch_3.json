@@ -1,0 +1,504 @@
+{
+  "title": "Z-Transform",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "question": "What is the primary purpose of the Z-transform in the analysis and design of discrete-time systems?",
+      "options": [
+        "To transform continuous-time signals into the frequency domain.",
+        "To transform discrete-time signals into the complex frequency domain.",
+        "To transform signals from the frequency domain back to the time domain.",
+        "To simplify the representation of analog filters."
+      ],
+      "explanation": "الوظيفة الأساسية لتحويل Z هي تحويل الإشارات من النطاق الزمني المتقطع إلى نطاق التردد المركب، مما يسهل التحليل والتصميم. الإجابة الصحيحة هي: B.",
+      "correctAnswer": "B"
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "question": "Which of the following is NOT a reason why the Z-transform is needed in DSP, according to the document?",
+      "options": [
+        "Solves Difference Equations Easily.",
+        "Simplifies Convolution Operations.",
+        "Helps with system stability analysis.",
+        "Converts analog signals to digital signals."
+      ],
+      "explanation": "لا يُذكر في الملف أن تحويل Z يُستخدم لتحويل الإشارات التناظرية إلى رقمية؛ هذه عملية تسمى 'أخذ العينات' (sampling). الإجابة الصحيحة هي: D.",
+      "correctAnswer": "D"
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "question": "The Region of Convergence (ROC) of the Z-transform is the set of values of z for which:",
+      "options": [
+        "The time-domain signal x[n] is non-zero.",
+        "The Z-transform summation converges.",
+        "The system is stable.",
+        "The system is causal."
+      ],
+      "explanation": "منطقة التقارب (ROC) تُعرف بأنها مدى قيم z في المستوى z التي يتقارب عندها مجموع تعريف تحويل Z. الإجابة الصحيحة هي: B.",
+      "correctAnswer": "B"
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "question": "According to the document, stability of a system depends on whether the ROC includes:",
+      "options": [
+        "The origin (z=0).",
+        "The point at infinity (z=∞).",
+        "The unit circle (∣z∣=1).",
+        "The poles of X(z)."
+      ],
+      "explanation": "استقرار النظام يعتمد على ما إذا كانت منطقة التقارب (ROC) تشمل دائرة الوحدة ∣z∣=1. الإجابة الصحيحة هي: C.",
+      "correctAnswer": "C"
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "question": "A right-sided sequence (causal signal) has its ROC located:",
+      "options": [
+        "Inside the innermost pole.",
+        "Outside the outermost pole and extending to infinity.",
+        "As an annulus between two poles.",
+        "On the unit circle only."
+      ],
+      "explanation": "منطقة التقارب (ROC) تكون خارج أبعد قطب عن نقطة الأصل وتمتد إلى ما لا نهاية. الإجابة الصحيحة هي: B.",
+      "correctAnswer": "B"
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "question": "A left-sided sequence (anti-causal signal) has its ROC located:",
+      "options": [
+        "Inside the innermost pole.",
+        "Outside the outermost pole.",
+        "As an annulus between two poles.",
+        "Including the unit circle always."
+      ],
+      "explanation": "منطقة التقارب (ROC) داخل أقرب قطب إلى نقطة الأصل. الإجابة الصحيحة هي: A.",
+      "correctAnswer": "A"
+    },
+    {
+      "id": "q7",
+      "type": "mcq",
+      "question": "For a finite-length signal, the ROC is typically:",
+      "options": [
+        "Limited to the unit circle.",
+        "The entire z-plane except possibly z=0 or z=∞.",
+        "An annulus.",
+        "Outside a circle."
+      ],
+      "explanation": "الإشارات ذات الطول المحدود لها منطقة تقارب هي كامل المستوى z باستثناء الزوايا التي تجعل التعبير غير معرف. الإجابة الصحيحة هي: B.",
+      "correctAnswer": "B"
+    },
+    {
+      "id": "q8",
+      "type": "mcq",
+      "question": "A system is causal if and only if its ROC:",
+      "options": [
+        "Includes the unit circle.",
+        "Is outside the outermost pole and extends to infinity.",
+        "Is inside the innermost pole.",
+        "Is the entire z-plane."
+      ],
+      "explanation": "النظام يكون سببيًا إذا كانت منطقة التقارب (ROC) الخاصة به تقع خارج أبعد قطب وتمتد إلى ما لا نهاية. الإجابة الصحيحة هي: B.",
+      "correctAnswer": "B"
+    },
+    {
+      "id": "q9",
+      "type": "mcq",
+      "question": "Which type of sequence has its ROC typically as an annulus (a region between two circles)?",
+      "options": [
+        "Right-Sided Sequences.",
+        "Left-Sided Sequences.",
+        "Two-Sided (Bilateral) Sequences.",
+        "Finite-Length Sequences."
+      ],
+      "explanation": "المتتابعات ثنائية الجانب (Two-Sided or Bilateral Sequences) لها منطقة تقارب في شكل حلقة بين قطبين. الإجابة الصحيحة هي: C.",
+      "correctAnswer": "C"
+    },
+    {
+      "id": "q10",
+      "type": "mcq",
+      "question": "The Z-transform converts the convolution of two sequences into what operation in the Z-domain?",
+      "options": [
+        "Addition.",
+        "Subtraction.",
+        "Multiplication.",
+        "Division."
+      ],
+      "explanation": "تحويل Z يُحول عملية الالتفاف في النطاق الزمني إلى ضرب في النطاق Z. الإجابة الصحيحة هي: C.",
+      "correctAnswer": "C"
+    },
+    {
+      "id": "q11",
+      "type": "mcq",
+      "question": "What is the Z-transform of the impulse function δ[n]?",
+      "options": [
+        "z^−1",
+        "1",
+        "z",
+        "0"
+      ],
+      "explanation": "تحويل Z لدالة النبضة هو 1. الإجابة الصحيحة هي: B.",
+      "correctAnswer": "B"
+    },
+    {
+      "id": "q12",
+      "type": "mcq",
+      "question": "If the ROC of a system includes the unit circle, the system is considered:",
+      "options": [
+        "Causal.",
+        "Anti-causal.",
+        "Stable.",
+        "Unstable."
+      ],
+      "explanation": "النظام يكون مستقراً إذا كانت منطقة التقارب تشمل دائرة الوحدة ∣z∣=1. الإجابة الصحيحة هي: C.",
+      "correctAnswer": "C"
+    },
+    {
+      "id": "q13",
+      "type": "mcq",
+      "question": "The Z-transform of a sequence x[n−k] is z^−k X(z), where X(z) is the Z-transform of x[n]. This is known as the:",
+      "options": [
+        "Linearity property.",
+        "Convolution property.",
+        "Time-shift property.",
+        "Frequency shift property."
+      ],
+      "explanation": "هذه هي خاصية الإزاحة الزمنية (Time-shift property). الإجابة الصحيحة هي: C.",
+      "correctAnswer": "C"
+    },
+    {
+      "id": "q14",
+      "type": "mcq",
+      "question": "If a system's impulse response h[n] is absolutely summable (∑ₙ=−∞∞ ∣h[n]∣<∞), the system is:",
+      "options": [
+        "Causal.",
+        "Anti-causal.",
+        "Stable.",
+        "Unstable."
+      ],
+      "explanation": "شرط قابلية التجميع المطلق لاستجابة النبضة يعني أن النظام مستقر. الإجابة الصحيحة هي: C.",
+      "correctAnswer": "C"
+    },
+    {
+      "id": "q15",
+      "type": "mcq",
+      "question": "The mathematical definition of the Z-transform for a general discrete-time signal x[n] is:",
+      "options": [
+        "X(z)=∑ₙ=0∞ x[n]z^−n",
+        "X(s)=∫₋∞∞ x(t)e^−st dt",
+        "X(ω)=∑ₙ=−∞∞ x[n]e^−jωn",
+        "X(z)=∑ₙ=−∞∞ x[n]z^−n"
+      ],
+      "explanation": "التعريف العام لتحويل Z هو X(z)=∑ₙ=−∞∞ x[n]z^−n. الإجابة الصحيحة هي: D.",
+      "correctAnswer": "D"
+    },
+    {
+      "id": "q16",
+      "type": "mcq",
+      "question": "In the definition of the Z-transform, what does the variable z represent?",
+      "options": [
+        "Time index.",
+        "Real frequency.",
+        "Complex variable in the z-plane.",
+        "Angular frequency."
+      ],
+      "explanation": "حسب الصفحة الثانية من الملف، المتغير z في تعريف تحويل Z هو متغير مركب (complex variable) يقع في المستوى المركب z-plane. الإجابة الصحيحة هي: C.",
+      "correctAnswer": "C"
+    },
+    {
+      "id": "q17",
+      "type": "mcq",
+      "question": "Compared to the Laplace transform, the Z-transform is primarily applied to:",
+      "options": [
+        "Continuous-time systems.",
+        "Analog filters.",
+        "Discrete-time systems.",
+        "Control systems (continuous-time)."
+      ],
+      "explanation": "حسب الصفحة الثانية، تحويل Z يستخدم في معالجة الإشارات الرقمية لتحليل وتصميم الأنظمة ذات الوقت المتقطع، بينما تحويل لابلاس للأنظمة المستمرة. الإجابة الصحيحة هي: C.",
+      "correctAnswer": "C"
+    },
+    {
+      "id": "q18",
+      "type": "mcq",
+      "question": "What does the 'Region of Convergence (ROC)' of the Z-transform signify?",
+      "options": [
+        "The range of unstable z values.",
+        "The set of z values for which the Z-transform summation converges.",
+        "The frequencies present in the signal.",
+        "The duration of the discrete-time signal."
+      ],
+      "explanation": "حسب الصفحة العاشرة، منطقة التقارب (ROC) هي مدى قيم z في المستوى المركب التي يتقارب عندها مجموع تعريف تحويل Z (أي أن المجموع له قيمة محدودة). الإجابة الصحيحة هي: B.",
+      "correctAnswer": "B"
+    },
+    {
+      "id": "q19",
+      "type": "mcq",
+      "question": "For a causal signal x[n]=a^n u[n], where is the pole of its Z-transform located?",
+      "options": [
+        "At z=0.",
+        "At z=∞.",
+        "At z=a.",
+        "At z=1/a."
+      ],
+      "explanation": "تحويل Z للدالة a^n u[n] هو X(z)= 1/(1−az^−1) * 1/(z−a). القطب هو القيمة التي تجعل المقام يساوي صفراً، أي z−a=0⟹z=a. الإجابة الصحيحة هي: C.",
+      "correctAnswer": "C"
+    },
+    {
+      "id": "q20",
+      "type": "mcq",
+      "question": "If the ROC of a system includes the unit circle (|z|=1), what can be concluded about the system?",
+      "options": [
+        "It is causal.",
+        "It is anti-causal.",
+        "It is stable.",
+        "It is of finite duration."
+      ],
+      "explanation": "حسب الصفحة العاشرة والحادية عشرة، الشرط الأساسي لاستقرار النظام هو أن تشمل منطقة التقارب (ROC) لدالة تحويل Z الخاصة به دائرة الوحدة |z|=1. الإجابة الصحيحة هي: C.",
+      "correctAnswer": "C"
+    },
+    {
+      "id": "q21",
+      "type": "mcq",
+      "question": "Which property of the Z-transform is used to find the transform of x[n−k] if X(z) is the transform of x[n]?",
+      "options": [
+        "Linearity.",
+        "Convolution.",
+        "Time Reversal.",
+        "Time Shifting."
+      ],
+      "explanation": "حسب الصفحة السابعة، الخاصية التي تربط تحويل Z لإشارة مزاحة زمنياً بتحويل الإشارة الأصلية هي خاصية الإزاحة الزمنية (Time Shifting)، حيث Z{x[n−k]}=z^−k X(z). الإجابة الصحيحة هي: D.",
+      "correctAnswer": "D"
+    },
+    {
+      "id": "q22",
+      "type": "mcq",
+      "question": "For a left-sided sequence x[n]=a^n u[−n−1], the ROC is of the form:",
+      "options": [
+        "|z|>R.",
+        "|z|<R.",
+        "R1<|z|<R2.",
+        "Entire z-plane."
+      ],
+      "explanation": "حسب الصفحة الحادية عشرة، بالنسبة للمتتابعات يسرى الجانب، تكون منطقة التقارب (ROC) داخل دائرة نصف قطرها R=|a|، أي |z|<|a|. الإجابة الصحيحة هي: B.",
+      "correctAnswer": "B"
+    },
+    {
+      "id": "q23",
+      "type": "mcq",
+      "question": "A signal with a Z-transform ROC that is the entire z-plane (except possibly z=0 or z=∞) is likely a:",
+      "options": [
+        "Right-sided sequence.",
+        "Left-sided sequence.",
+        "Two-sided sequence.",
+        "Finite-length sequence."
+      ],
+      "explanation": "حسب الصفحات الثامنة والتاسعة، الإشارات ذات الطول المحدود تكون منطقة التقارب (ROC) الخاصة بها هي المستوى z بأكمله (باستثناء ربما 0 أو ∞). الإجابة الصحيحة هي: D.",
+      "correctAnswer": "D"
+    },
+    {
+      "id": "q24",
+      "type": "mcq",
+      "question": "If a system is causal, its ROC must:",
+      "options": [
+        "Include the unit circle.",
+        "Be inside the innermost pole.",
+        "Be outside the outermost pole and extend to infinity.",
+        "Be a ring in the z-plane."
+      ],
+      "explanation": "حسب الصفحة العاشرة والثانية عشرة، شرط السببية هو أن تكون منطقة التقارب (ROC) خارج أبعد قطب وتمتد إلى ما لا نهاية. الإجابة الصحيحة هي: C.",
+      "correctAnswer": "C"
+    },
+    {
+      "id": "q25",
+      "type": "mcq",
+      "question": "What operation in the time domain corresponds to multiplication in the Z-domain?",
+      "options": [
+        "Addition.",
+        "Convolution.",
+        "Correlation.",
+        "Differentiation."
+      ],
+      "explanation": "حسب الصفحة الثانية، تحويل Z يحول عملية الالتفاف (Convolution) في النطاق الزمني إلى عملية ضرب في نطاق Z. الإجابة الصحيحة هي: B.",
+      "correctAnswer": "B"
+    },
+    {
+      "id": "tf1",
+      "type": "tf",
+      "question": "The Laplace transform is primarily used for analyzing discrete-time systems.",
+      "correctAnswer": "False",
+      "explanation": "تحويل لابلاس يُستخدم لتحليل الأنظمة ذات الوقت المستمر."
+    },
+    {
+      "id": "tf2",
+      "type": "tf",
+      "question": "The ROC for a right-sided sequence aₙu[n] is ∣z∣<∣a∣.",
+      "correctAnswer": "False",
+      "explanation": "منطقة التقارب (ROC) لمتتابعة يمنى الجانب تكون ∣z∣>∣a∣."
+    },
+    {
+      "id": "tf3",
+      "type": "tf",
+      "question": "A system is stable if its ROC does NOT include the unit circle.",
+      "correctAnswer": "False",
+      "explanation": "استقرار النظام يتطلب أن تشمل منطقة التقارب (ROC) دائرة الوحدة ∣z∣=1."
+    },
+    {
+      "id": "tf4",
+      "type": "tf",
+      "question": "The Z-transform of a finite-length signal is always defined for the entire z-plane.",
+      "correctAnswer": "False",
+      "explanation": "منطقة تقارب إشارة ذات طول محدود تكون عادةً كامل المستوى z باستثناء z=0 أو z=∞."
+    },
+    {
+      "id": "tf5",
+      "type": "tf",
+      "question": "Causality of a discrete-time system can be determined by examining the ROC of its Z-transform.",
+      "correctAnswer": "True",
+      "explanation": "السببية تُحدد من خلال فحص شكل منطقة التقارب (ROC)."
+    },
+    {
+      "id": "tf6",
+      "type": "tf",
+      "question": "If a system's impulse response is absolutely summable, the system is stable.",
+      "correctAnswer": "True",
+      "explanation": "إذا كانت استجابة النظام للنبضة قابلة للجمع المطلق، فالنظام مستقر."
+    },
+    {
+      "id": "tf7",
+      "type": "tf",
+      "question": "The Z-transform of a sequence x[n] is always defined for the entire z-plane.",
+      "correctAnswer": "False",
+      "explanation": "يتم تعريف تحويل Z فقط عندما تشمل منطقة التقارب المجال المناسب."
+    },
+    {
+      "id": "tf8",
+      "type": "tf",
+      "question": "A system is causal if its ROC includes the unit circle.",
+      "correctAnswer": "False",
+      "explanation": "السببية تتطلب أن تكون منطقة التقارب خارج أبعد قطب عن نقطة الأصل."
+    },
+    {
+      "id": "tf9",
+      "question": "A right-sided sequence always has its ROC extending to infinity.",
+      "correctAnswer": "True",
+      "explanation": "المتتابعات يمنى الجانب غالباً ما تكون لها منطقة تقارب تمتد إلى ما لا نهاية."
+    },
+    {
+      "id": "tf10",
+      "type": "tf",
+      "question": "The Z-transform of a causal sequence has its ROC outside the outermost pole.",
+      "correctAnswer": "True",
+      "explanation": "بالنسبة للإشارات السببية، تكون منطقة التقارب عادةً خارج أبعد قطب."
+    },
+    {
+      "id": "tf11",
+      "type": "tf",
+      "question": "If the ROC of a system includes the unit circle, the system is stable.",
+      "correctAnswer": "True",
+      "explanation": "استقرار النظام يتحقق عندما تشمل منطقة التقارب دائرة الوحدة ∣z∣=1."
+    },
+    {
+      "id": "tf12",
+      "type": "tf",
+      "question": "The Z-transform can be used to simplify convolution operations in the time domain.",
+      "correctAnswer": "True",
+      "explanation": "تحويل Z يبسط عملية الالتفاف إلى ضرب في النطاق Z."
+    },
+    {
+      "id": "tf13",
+      "type": "tf",
+      "question": "The Z-transform is not applicable to sequences of finite length.",
+      "correctAnswer": "False",
+      "explanation": "يمكن تطبيق تحويل Z على الإشارات ذات الطول المحدود."
+    },
+    {
+      "id": "tf14",
+      "type": "tf",
+      "question": "A left-sided sequence has its ROC inside the innermost pole.",
+      "correctAnswer": "True",
+      "explanation": "للإشارات يسرى الجانب، تكون منطقة التقارب داخل أقرب قطب."
+    },
+    {
+      "id": "tf15",
+      "type": "tf",
+      "question": "The ROC of a two-sided sequence is typically an annulus between two poles.",
+      "correctAnswer": "True",
+      "explanation": "منطقة التقارب للإشارات ثنائية الجانب هي عادة حلقة بين قطبين."
+    },
+    {
+      "id": "tf16",
+      "type": "tf",
+      "question": "A system is stable if its ROC includes the unit circle.",
+      "correctAnswer": "True",
+      "explanation": "استقرار النظام يتطلب أن تشمل منطقة التقارب دائرة الوحدة ∣z∣=1."
+    },
+    {
+      "id": "tf17",
+      "type": "tf",
+      "question": "The Z-transform of a finite-length signal is always defined for the entire z-plane.",
+      "correctAnswer": "False",
+      "explanation": "إشارة ذات طول محدود قد يكون لها منطقة تقارب محدودة."
+    },
+    {
+      "id": "tf18",
+      "type": "tf",
+      "question": "Causality of a system can be determined from the ROC of its Z-transform.",
+      "correctAnswer": "True",
+      "explanation": "السببية تعتمد على شكل منطقة التقارب (ROC)."
+    },
+    {
+      "id": "tf19",
+      "type": "tf",
+      "question": "A system is stable if its ROC includes the unit circle.",
+      "correctAnswer": "True",
+      "explanation": "إذا كانت منطقة التقارب تشمل دائرة الوحدة، فإن النظام مستقر."
+    },
+    {
+      "id": "tf20",
+      "type": "tf",
+      "question": "The ROC of a right-sided sequence extends from the outermost pole to infinity.",
+      "correctAnswer": "True",
+      "explanation": "منطقة التقارب للإشارة يمنى الجانب تمتد عادةً إلى ما لا نهاية."
+    },
+    {
+      "id": "tf21",
+      "type": "tf",
+      "question": "A finite-length signal always has its ROC as the entire z-plane.",
+      "correctAnswer": "False",
+      "explanation": "منطقة تقارب الإشارة ذات الطول المحدود قد تكون محدودة."
+    },
+    {
+      "id": "tf22",
+      "type": "tf",
+      "question": "The Z-transform of a sequence is only valid if the sequence is causal.",
+      "correctAnswer": "False",
+      "explanation": "يمكن تطبيق تحويل Z على الإشارات غير السببية أيضًا."
+    },
+    {
+      "id": "tf23",
+      "type": "tf",
+      "question": "The ROC of a left-sided sequence is always inside the innermost pole.",
+      "correctAnswer": "True",
+      "explanation": "منطقة التقارب للإشارات يسرى الجانب تكون داخل أقرب قطب."
+    },
+    {
+      "id": "tf24",
+      "type": "tf",
+      "question": "The Z-transform of a sequence provides a tool for analyzing the system's frequency response.",
+      "correctAnswer": "True",
+      "explanation": "تحويل Z يساعد في تحليل استجابة الترددات للنظام."
+    },
+    {
+      "id": "tf25",
+      "type": "tf",
+      "question": "The Z-transform is not helpful in determining the stability of a discrete-time system.",
+      "correctAnswer": "False",
+      "explanation": "تحويل Z يُستخدم لتحديد استقرار النظام بواسطة فحص منطقة التقارب."
+    }
+  ]
+}
