@@ -156,6 +156,13 @@ body {
     color: var(--primary-color);
 }
 
+@media (max-width:700px){
+
+    .header-bar h1 {
+        font-size:1.4rem;
+    }
+}
+
 /* Toggle Dark Mode Button */
 #toggle-dark {
     background: none;
