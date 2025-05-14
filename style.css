@@ -140,6 +140,14 @@ body {
     text-align: left;
 }
 
+@media (max-width:700px){
+    .container {
+        padding: 15px;
+        margin: 20px auto;
+        width: 92%;
+    }
+}
+
 /* Header Bar on Index Page */
 .header-bar {
     display: flex;
